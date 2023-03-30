@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
-export default {
+const config = {
   kit: {
     adapter: adapter({
       // default options are shown. On some platforms
@@ -12,4 +13,8 @@ export default {
       strict: true,
     }),
   },
-};
+  preprocess: vitePreprocess(),
+  };
+
+
+export default config;
