@@ -2,8 +2,11 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        nav: '50px',
+      },
+    },
   },
   plugins: [],
-}
-
+};
