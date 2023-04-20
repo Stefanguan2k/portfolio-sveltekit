@@ -1,17 +1,18 @@
 <script>
   import '../app.css';
-  import Navbar from '../lib/navbar.svelte'
-  import "@fontsource/poppins";
+  import Navbar from '../lib/navbar.svelte';
+  import Footer from '../lib/footer.svelte';
+  import '@fontsource/poppins';
 </script>
 
-
 <Navbar />
-<div>
+<body>
   <slot />
-</div>
+</body>
+<Footer />
 
 <style>
   :global(body) {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 </style>
