@@ -11,6 +11,9 @@ export default {
       height: {
         nav: '50px',
       },
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0.1, 1, 0.2, 1)',
+      },
     },
   },
   plugins: [],

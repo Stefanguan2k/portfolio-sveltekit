@@ -1,7 +1,8 @@
 <script>
   import { page } from '$app/stores';
-  import { add_transform } from 'svelte/internal';
+  import _ from 'lodash';
 
+  let navbar;
   let navBg;
   let linkContainer;
   let navLink;
@@ -19,21 +20,40 @@
     }
   };
 
-  const indexSwitch = () => {
-    if (navLink.getAttribute('data-pos') === '0') {
-      navLink.setAttribute('data-pos', '-1');
-      projLink.setAttribute('data-pos', '0');
-      returnToNav.setAttribute('data-active', true);
+  function revealProject() {
+    if (window.innerWidth <= 768) {
+      if (navLink.getAttribute('data-pos') === '0') {
+        navLink.setAttribute('data-pos', '-1');
+        projLink.setAttribute('data-pos', '0');
+        returnToNav.setAttribute('data-active', true);
+      } else {
+        navLink.setAttribute('data-pos', '0');
+        projLink.setAttribute('data-pos', '1');
+        returnToNav.setAttribute('data-active', false);
+      }
     } else {
-      navLink.setAttribute('data-pos', '0');
-      projLink.setAttribute('data-pos', '1');
-      returnToNav.setAttribute('data-active', false);
+      if (navBg.getAttribute('data-active') === 'false') {
+        navBg.setAttribute('data-active', true);
+        projLink.setAttribute('data-pos', '2');
+      } else {
+        navBg.setAttribute('data-active', false);
+        projLink.setAttribute('data-pos', '1');
+      }
     }
-  };
+  }
+
+  function widthCloseNav() {
+    if (window.innerWidth >= 768) {
+      linkContainer.setAttribute('data-active', false);
+      navBg.setAttribute('data-active', false);
+    }
+  }
 </script>
 
+<svelte:window on:resize={_.throttle(widthCloseNav, 250)} />
+
 <nav
-  class="flex justify-between h-nav px-6 items-center fixed w-full m-0 text-zinc-200 z-99"
+  class="flex justify-between h-nav px-6 items-center fixed w-full m-0 text-zinc-200 z-99 md:mt-6 md:w-11/12 md:left-[50%] md:translate-x-[-50%] md:max-w-7xl"
 >
   <!-- Logo -->
   <div class="z-50">
@@ -47,12 +67,12 @@
   </div>
 
   <div
-    class="relative overflow-none z-50 w-5/6 -translate-y-64 transition-all data-[active=true]:translate-y-36"
+    class="relative overflow-none z-50 w-5/6 -translate-y-64 transition-all data-[active=true]:translate-y-36 md:translate-y-0 md:w-auto"
     bind:this={linkContainer}
     data-active="false"
   >
     <ul
-      class="relative top-0 flex w-full flex-col gap-8 text-center bg-zinc-700/50 rounded-lg py-6 data-[pos='-1']:-translate-x-[calc(100%+2rem)] transition-all"
+      class="relative top-0 flex w-full flex-col gap-8 text-center bg-zinc-700/50 rounded-lg py-6 data-[pos='-1']:-translate-x-[calc(100%+2rem)] transition-all md:flex-row md:p-0 md:bg-transparent"
       bind:this={navLink}
       data-pos="0"
     >
@@ -61,7 +81,7 @@
       </li>
       <li>
         <button
-          on:click={() => indexSwitch()}
+          on:click={() => revealProject()}
           class="aria-current:text-main-100">Projects</button
         >
       </li>
@@ -71,16 +91,16 @@
       </li>
       <li><a href="/contact" class="aria-current:text-main-100">Contact</a></li>
       <!-- Hidden right panel for changing panel back to main nav elements -->
-      <li class="absolute h-full w-10 right-0 top-0 z-999">
+      <li class="absolute h-full w-10 right-0 top-0 z-999 md:hidden">
         <button
           class="flex justify-end items-center h-full w-10 opacity-0 cursor-default data-[active=true]:cursor-pointer data-[active=true]:opacity-100"
           bind:this={returnToNav}
           data-active="false"
           on:click={navLink.getAttribute('data-pos') === '-1'
-            ? indexSwitch()
+            ? revealProject()
             : console.log('hi')}
           on:keypress={navLink.getAttribute('data-pos') === '-1'
-            ? indexSwitch()
+            ? revealProject()
             : console.log('hi')}
           ><img
             src="../src/assets/svg/chevron-left.svg"
@@ -89,6 +109,9 @@
         >
       </li>
     </ul>
+    <!-- ------------- -->
+    <!-- Project links -->
+    <!-- ------------- -->
     <div
       class="absolute top-0 left-0 grid grid-cols-2 grid-rows-3 gap-4 h-full text-center transition-all w-full data-[pos='1']:translate-x-[calc(100%+10rem)]"
       bind:this={projLink}
@@ -126,9 +149,12 @@
       class="h-6 w-6 fill-zinc-200"
     />
   </button>
+  <!-- ----------------- -->
   <!-- Navbar background -->
+  <!-- ----------------- -->
   <div
-    class="absolute backdrop-blur-md bg-zinc-900/75 h-80 bg-slate-100 w-full top-0 left-0 -translate-y-[270px] data-[active=true]:translate-y-0 data-[active=true]:rounded-b-xl transition-all"
+    class="absolute backdrop-blur-md bg-zinc-900/75 h-80 bg-slate-100 w-full top-0 left-0 -translate-y-[270px] data-[active=true]:translate-y-0 data-[active=true]:rounded-b-xl
+    transition-all md:translate-y-0 md:rounded-lg md:h-nav md:data-[active=true]:h-32"
     data-active="false"
     bind:this={navBg}
   />

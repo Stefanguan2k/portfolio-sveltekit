@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/poppins": "^4.5.10"
+		"@fontsource/poppins": "^4.5.10",
+		"lodash": "^4.17.21"
 	}
 }

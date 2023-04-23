@@ -1,5 +1,5 @@
 
- <div class="bg-slate-900 w-full h-screen text-white pt-16">
+ <div class="bg-zinc-700 w-full h-screen text-white pt-16">
    <h1>Welcome to SvelteKit</h1>
     <p>
       Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
