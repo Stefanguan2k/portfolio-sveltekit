@@ -7,6 +7,13 @@ export default {
         main: {
           100: '#0087AC',
         },
+        background: {
+          100: '#242424',
+          500: '#353535',
+        },
+        nav: {
+          100: 'rgba(22,22,23,0.8)',
+        },
       },
       height: {
         nav: '50px',

@@ -139,7 +139,9 @@
     <!-- ------------- -->
     <div
       class="absolute top-0 left-0 grid grid-cols-2 grid-rows-3 gap-4 h-full text-center transition-all w-full data-[pos='1']:translate-x-[calc(100%+10rem)]
-       md:flex md:opacity-0 md:data-[pos='1']:translate-x-[calc(100%+50rem)] md:data-[pos='0']:translate-y-0 md:data-[pos='0']:opacity-100 md:gap-8 md:left-[-2rem]"
+       md:flex md:opacity-0 md:data-[pos='1']:translate-x-[calc(100%+50rem)] md:data-[pos='0']:translate-y-0 md:data-[pos='0']:opacity-100 md:gap-8 md:left-[-2rem]
+       md:data-[pos='1']:translate-x-0 
+       "
       bind:this={projLink}
       data-pos="1"
     >

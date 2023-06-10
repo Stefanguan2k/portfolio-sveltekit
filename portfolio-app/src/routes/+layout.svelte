@@ -1,15 +1,13 @@
 <script>
   import '../app.css';
-  import Navbar from '../lib/navbar.svelte';
-  import Footer from '../lib/footer.svelte';
+  import Navbar from '../lib/nav.svelte';
   import '@fontsource/poppins';
 </script>
 
 <Navbar />
-<body>
+<body class="bg-background-100">
   <slot />
 </body>
-<Footer />
 
 <style>
   :global(body) {
