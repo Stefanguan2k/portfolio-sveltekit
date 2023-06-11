@@ -16,5 +16,9 @@
   border: 3px solid #242424;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @tailwind components;
 @tailwind utilities;

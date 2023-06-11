@@ -21,6 +21,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "svelte-inview": "^4.0.0"
   }
 }
