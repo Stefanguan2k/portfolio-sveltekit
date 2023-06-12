@@ -1,6 +1,7 @@
 <script>
   import { inview } from 'svelte-inview';
   import NavIndex from '../lib/nav.svelte';
+  import ProjCard from '../lib/project-card.svelte';
 
   let isInView;
   const options = {
@@ -16,14 +17,18 @@
 
 <NavIndex bind:updateActive={changeIndx} />
 
-<div class="flex flex-col gap-6 text-white" id="container">
+<div
+  class="flex flex-col gap-6 text-white max-w-[1280px] m-auto"
+  id="container"
+>
+  <!-- Hero -->
   <section
     class="relative flex flex-col justify-center items-center min-h-[90vh] mt-4 p-10 rounded-2xl overflow-hidden
     md:ml-24"
     id="hero"
     use:inview={options}
     on:inview_enter={(event) => {
-      const { inView, entry, scrollDirection, observer, node } = event.detail;
+      const { inView } = event.detail;
       isInView = inView;
       indx = 0;
       change();
@@ -39,14 +44,14 @@
       <!-- Background -->
     </div>
   </section>
-
+  <!-- Projects -->
   <section
-    class="min-h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11
-  md:ml-24"
+    class="h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    md:ml-24"
     id="projects"
     use:inview={options}
     on:inview_enter={(event) => {
-      const { inView, entry, scrollDirection, observer, node } = event.detail;
+      const { inView } = event.detail;
       isInView = inView;
       indx = 1;
       change();
@@ -56,15 +61,23 @@
     <div class="flex justify-between">
       <h2 class="text-2xl font-bold">Projects</h2>
     </div>
+    <div
+      class="grid gap-6 h-full w-full overflow-y-auto content-start md:grid-cols-2 md:grid-rows:2 md:content-stretch"
+    >
+      <ProjCard info.name='hello'/>
+      <ProjCard />
+      <ProjCard />
+      <ProjCard />
+    </div>
   </section>
-
+  <!-- About Me -->
   <section
     class="min-h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11
-  md:ml-24"
+    md:ml-24"
     id="aboutme"
     use:inview={options}
     on:inview_enter={(event) => {
-      const { inView, entry, scrollDirection, observer, node } = event.detail;
+      const { inView } = event.detail;
       isInView = inView;
       indx = 2;
       change();
@@ -72,14 +85,14 @@
   >
     <h2 class="text-2xl font-bold">About Me</h2>
   </section>
-
+  <!-- Contact Me -->
   <section
     class="min-h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11 mb-20 md:mb-12
-  md:ml-24"
+    md:ml-24"
     id="contact"
     use:inview={options}
     on:inview_enter={(event) => {
-      const { inView, entry, scrollDirection, observer, node } = event.detail;
+      const { inView } = event.detail;
       isInView = inView;
       indx = 3;
       change();
