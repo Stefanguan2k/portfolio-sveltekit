@@ -46,7 +46,7 @@
   </section>
   <!-- Projects -->
   <section
-    class="h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    class="min-h-[750px] h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
     md:ml-24"
     id="projects"
     use:inview={options}
@@ -62,12 +62,12 @@
       <h2 class="text-2xl font-bold">Projects</h2>
     </div>
     <div
-      class="grid gap-6 h-full w-full overflow-y-auto content-start md:grid-cols-2 md:grid-rows:2 md:content-stretch"
+      class="grid gap-6 h-full w-full content-start md:grid-cols-2 md:grid-rows:2 md:content-stretch"
     >
-      <ProjCard info.name='hello'/>
-      <ProjCard />
-      <ProjCard />
-      <ProjCard />
+      <ProjCard name='SwiftVote' role='UX Case Study' theme='black'/>
+      <ProjCard name='Oasis' role='UX Case Study' theme='black'/>
+      <ProjCard name='Yopo' role='Web Design' theme='black'/>
+      <ProjCard name='Munch' role='UX Case Study' theme='black'/>
     </div>
   </section>
   <!-- About Me -->
