@@ -40,7 +40,7 @@
     md:left-0 md:top-[50%] md:translate-y-[-50%] md:translate-x-0 md:h-[95%] md:w-max md:rounded-bl-none md:rounded-tl-none md:rounded-xl"
 >
   <div
-    class="relative flex flex-row z-50 p-6 h-full justify-evenly md:flex-col md:justify-between md:overflow-y-auto"
+    class="relative flex flex-row z-50 p-6 h-full justify-evenly md:flex-col md:justify-between md:overflow-y-auto md:px-4"
   >
     <ul
       class="flex justify-between w-full px-6 md:p-0 md:flex-col md:gap-[clamp(1.5rem,7vh,7vh)] md:px-2"
