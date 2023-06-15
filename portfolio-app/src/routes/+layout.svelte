@@ -5,7 +5,7 @@
 </script>
 
 <Navbar />
-<body class="bg-background-300 dark:bg-background-900">
+<body class="bg-background-100 dark:bg-background-900">
   <slot />
 </body>
 
