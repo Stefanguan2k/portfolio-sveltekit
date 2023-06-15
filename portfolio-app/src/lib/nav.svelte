@@ -36,7 +36,7 @@
 </script>
 
 <nav
-  class="z-40 fixed bottom-0 left-[50%] translate-x-[-50%] mb-6 w-[90%] text-zinc-100 bg-nav-100 backdrop-blur-lg rounded-3xl
+  class="z-40 fixed bottom-0 left-[50%] translate-x-[-50%] mb-6 w-[90%] bg-nav-100 dark:bg-nav-800 backdrop-blur-lg rounded-3xl shadow-xl md:shadow-none
     md:left-0 md:top-[50%] md:translate-y-[-50%] md:translate-x-0 md:h-[95%] md:w-max md:rounded-bl-none md:rounded-tl-none md:rounded-xl"
 >
   <div
@@ -51,7 +51,7 @@
           ><img
             src="../src/assets/svg/sg.svg"
             alt="Stefan Guan logo"
-            class="h-6 w-6"
+            class="h-6 w-6 invert-[0.85] dark:invert-0"
           /></a
         >
       </li>
@@ -59,7 +59,7 @@
       <li>
         <a href="/#hero" class="flex gap-12 w-max"
           ><svg
-            class="h-6 w-6 fill-zinc-300 data-[active='true']:fill-main-100"
+            class="h-6 w-6 fill-zinc-700 dark:fill-zinc-300 data-[active='true']:fill-main-100"
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 576 512"
@@ -80,7 +80,7 @@
             height="48"
             viewBox="0 -960 960 960"
             width="48"
-            class="h-6 w-6 fill-zinc-300 data-[active='true']:fill-main-100"
+            class="h-6 w-6 fill-zinc-700 dark:fill-zinc-300 data-[active='true']:fill-main-100"
             data-active="false"
             bind:this={projIcon}
             ><path
@@ -96,7 +96,7 @@
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 576 512"
-            class="h-6 w-6 fill-zinc-300 data-[active='true']:fill-main-100"
+            class="h-6 w-6 fill-zinc-700 dark:fill-zinc-300 data-[active='true']:fill-main-100"
             data-active="false"
             bind:this={aboutIcon}
             ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
@@ -112,7 +112,7 @@
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 512 512"
-            class="h-6 w-6 fill-zinc-300 data-[active='true']:fill-main-100"
+            class="h-6 w-6 fill-zinc-700 dark:fill-zinc-300 data-[active='true']:fill-main-100"
             data-active="false"
             bind:this={contactIcon}
             ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path

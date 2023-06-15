@@ -7,17 +7,28 @@
 *::-webkit-scrollbar {
   width: 15px;
 }
+
 *::-webkit-scrollbar-track {
-  background: #242424;
+  background: #e6e6e6;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: rgb(101, 101, 101);
+  background-color: rgb(63, 63, 70);
   border-radius: 14px;
-  border: 3px solid #242424;
+  border: 3px solid #e6e6e6;
+}
+
+@media (prefers-color-scheme: dark) {
+  *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(101, 101, 101);
+    border: 3px solid #242424;
+  }
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 @tailwind components;

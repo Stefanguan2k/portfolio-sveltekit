@@ -5,7 +5,8 @@
 
   let isInView;
   const options = {
-    threshold: 0.6,
+    threshold: 0.4,
+    rootMargin: '0px',
   };
 
   let indx;
@@ -27,7 +28,7 @@
 <NavIndex bind:updateActive={changeIndx} />
 
 <div
-  class="flex flex-col gap-6 text-white max-w-[1280px] m-auto mb-0"
+  class="flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 max-w-[1280px] m-auto mb-0"
   id="container"
 >
   <!-- Hero -->
@@ -43,22 +44,18 @@
       change();
     }}
   >
-    <h1 class="z-10 font-semibold text-2xl">Lorem ipsum dolor sit.</h1>
-    <p class="z-10 mt-6 text-center">
-      Lorem ipsum dolor sit amet consectetur adipisicing.
-    </p>
+    <h1 class="z-10 font-thin text-3xl">Hi, I am Stefan Guan, a UX/Web Designer based in Surrey, BC.</h1>
     <div
-      class="absolute h-full w-full transform-gpu bg-gradient-to-tl from-main-100 to-violet-900 opacity-50"
+      class="absolute h-full w-full bg-gradient-to-tl from-main-100 to-violet-900 opacity-50"
     >
       <!-- Background -->
     </div>
   </section>
   <!-- Projects -->
   <section
-    class="min-h-[750px] h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
-    md:ml-24 data-[expanded='true']:fixed data-[expanded='true']:h-full data-[expanded='true']:w-full data-[expanded='true']:z-50 data-[expanded='true']:m-0"
+    class="h-full py-8 px-6 bg-background-200 dark:bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    md:p-10 md:ml-24"
     id="projects"
-    data-expanded="false"
     use:inview={options}
     on:inview_enter={(event) => {
       const { inView } = event.detail;
@@ -72,18 +69,18 @@
       <h2 class="text-2xl font-bold">Projects</h2>
     </div>
     <div
-      class="grid gap-6 h-full w-full content-start md:grid-cols-2 md:grid-rows:2 md:content-stretch"
+      class="grid gap-6 h-full w-full content-start grid-rows-auto md:grid-cols-2 md:grid-rows:2 md:content-stretch"
     >
-      <ProjCard name="SwiftVote" role="UX Case Study" theme="black" />
-      <ProjCard name="Oasis" role="UX Case Study" theme="black" />
-      <ProjCard name="Yopo" role="Web Design" theme="black" />
-      <ProjCard name="Munch" role="UX Case Study" theme="black" />
+      <ProjCard name="SwiftVote" role="UX Case Study" theme="rgba(0,100,100,0.5)" img='../src/assets/img/index-swiftvote.png' icon='figma' n='1'/>
+      <ProjCard name="Oasis" role="UX Case Study" theme="rgba(50,0,100,0.5)" img='../src/assets/img/index-oasis.png' icon='xd' n='1'/>
+      <ProjCard name="Yopo" role="Web Design" theme="rgba(95,50,0,0.5)" img='../src/assets/img/index-yopo.png' icon='codefigma' n='2'/>
+      <ProjCard name="Munch" role="UX Case Study" theme="rgba(0,50,100,0.5)" img='../src/assets/img/index-munch.png' icon='figma' n='1'/>
     </div>
   </section>
   <!-- About Me -->
   <section
-    class="min-h-[500px] h-max p-10 bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
-    md:ml-24 data-[expanded='true']:fixed data-[expanded='true']:h-full data-[expanded='true']:w-full data-[expanded='true']:z-50 data-[expanded='true']:m-0"
+    class="min-h-[500px] h-max py-8 px-6 bg-background-200 dark:bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    md:p-10 md:ml-24 data-[expanded='true']:fixed data-[expanded='true']:h-full data-[expanded='true']:w-full data-[expanded='true']:z-50 data-[expanded='true']:m-0"
     id="aboutme"
     use:inview={options}
     on:inview_enter={(event) => {
@@ -128,8 +125,8 @@
   </section>
   <!-- Contact Me -->
   <section
-    class="min-h-[90vh] p-10 bg-background-500 rounded-2xl scroll-mt-11 mb-10 md:mb-12
-    md:ml-24"
+    class="min-h-[90vh] py-8 px-6 bg-background-200 dark:bg-background-500 rounded-2xl scroll-mt-11 mb-10 md:mb-12
+    md:p-10 md:ml-24"
     id="contact"
     use:inview={options}
     on:inview_enter={(event) => {
