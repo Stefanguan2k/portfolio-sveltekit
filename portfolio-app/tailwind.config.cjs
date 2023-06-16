@@ -26,7 +26,7 @@ export default {
         nav: '50px',
       },
       transitionTimingFunction: {
-        smooth: 'cubic-bezier(0.1, 1, 0.2, 1)',
+        'ios-smooth': 'cubic-bezier(0.1, 1, 0.2, 1)',
       },
       animation: {
         rotate: 'rotate 10s linear infinite',

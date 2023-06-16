@@ -57,7 +57,7 @@
       </li>
       <!-- Home Icon -->
       <li>
-        <a href="/#hero" class="flex gap-12 w-max"
+        <a href="/#home" class="flex gap-12 w-max"
           ><svg
             class="h-6 w-6 fill-zinc-700 dark:fill-zinc-300 data-[active='true']:fill-main-100"
             xmlns="http://www.w3.org/2000/svg"
