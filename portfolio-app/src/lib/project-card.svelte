@@ -1,8 +1,6 @@
 <script>
   export let name, role, theme, img, icon, n;
   let iconLink;
-  let secondIcon;
-
   
   const icons = {
     figma: '../src/assets/svg/figma.svg',
@@ -27,12 +25,12 @@
 </script>
 
 <div
-  class="flex items-end w-full h-96 aspect-square rounded-md overflow-hidden bg-cover bg-center text-zinc-200
+  class="flex items-end w-full h-96 rounded-md overflow-hidden bg-cover bg-center text-zinc-200
     md:justify-center md:flex-wrap md:w-full"
   style="background-image: url({img})"
 >
   <div
-    class="bg-black w-full h-max py-6 grid grid-cols-3 backdrop-blur-xl"
+    class="bg-black w-full h-max py-4 grid grid-cols-3 backdrop-blur-xl"
     style:background={theme}
   >
     <div class="col-span-2">

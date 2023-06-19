@@ -55,7 +55,7 @@
   </section>
   <!-- Projects -->
   <section
-    class="h-full py-8 px-6 bg-background-200 dark:bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6
     md:p-10 md:ml-24"
     id="projects"
     use:inview={options}
@@ -81,8 +81,8 @@
           img="../src/assets/img/index-swiftvote.png"
           icon="figma"
           n="1"
-        /></a
-      >
+        />
+      </a>
       <ProjCard
         name="Oasis"
         role="UX Case Study"
@@ -111,7 +111,7 @@
   </section>
   <!-- About Me -->
   <section
-    class="h-full py-8 px-6 bg-background-200 dark:bg-background-500 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6
     md:p-10 md:ml-24"
     id="aboutme"
     use:inview={options}
@@ -169,7 +169,7 @@
   </section>
   <!-- Contact Me -->
   <section
-    class="min-h-[90vh] py-8 px-6 bg-background-200 dark:bg-background-500 rounded-2xl scroll-mt-11 mb-10 md:mb-12
+    class="min-h-[90vh] py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 mb-10 md:mb-12
     md:p-10 md:ml-24"
     id="contact"
     use:inview={options}
