@@ -11,7 +11,7 @@ export default {
           100: '#0087AC',
         },
         background: {
-          100: '#ffffff',
+          100: '#fbfbfb',
           200: '#f3f3f3',
           300: '#e6e6e6',
           500: '#505050',
