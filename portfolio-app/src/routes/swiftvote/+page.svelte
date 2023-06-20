@@ -474,7 +474,7 @@
       screen sizes.<br /><br />
       Thank you for taking the time out of your day to check my case study on SwiftVote.
     </p>
-    <div class="flex gap-6 flex-wrap text-zinc-100">
+    <div class="flex gap-6 flex-wrap text-zinc-100 w-full justify-center">
       <button
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full hover:bg-[rgba(90,90,90,0.5)] bg-[#308264] hover:bg-[#2f614f]"
         on:click={toggle.toggleModal()}

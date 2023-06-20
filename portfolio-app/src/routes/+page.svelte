@@ -33,7 +33,7 @@
 >
   <!-- Home -->
   <section
-    class="relative flex flex-col justify-center items-center min-h-[90vh] mt-4 p-10 rounded-2xl overflow-hidden
+    class="relative flex flex-col justify-center items-center min-h-[80vh] mt-4 p-10 rounded-2xl overflow-hidden
     md:ml-24"
     id="home"
     use:inview={options}
