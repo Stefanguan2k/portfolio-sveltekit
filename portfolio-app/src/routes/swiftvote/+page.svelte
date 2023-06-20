@@ -43,19 +43,19 @@
     md:p-10 md:ml-24"
   >
     <!-- Top bar -->
-    <h2 class="text-2xl font-bold self-start md:self-center">Summary</h2>
+    <h2 class="text-2xl font-bold self-start md:self-center text">Summary</h2>
     <div
       class="grid gap-6 h-full w-full content-start grid-rows-auto md:grid-cols-2 md:grid-rows:2 md:content-stretch"
     >
       <div class="bg-background-100 dark:bg-background-600 rounded-lg p-4">
-        <div class="mb-2 font-medium">Overview</div>
+        <div class="mb-2 text-lg">Overview</div>
         <p class="text-zinc-700 dark:text-zinc-300 mb-4">
           Users find that registering to vote is not always simple. SwiftVote is
           a service that empowers individuals to register to vote. The service
           aims to offer features that make it easy for users to register and
           stay on top of their registration.
         </p>
-        <div class="font-medium">Goal</div>
+        <div class="mb-2 text-lg">Goal</div>
         <p class="text-zinc-700 dark:text-zinc-300">
           Identify pain points with the voting registration process. Design an
           app and responsive website to alleviate the problems.
@@ -66,17 +66,17 @@
         class="flex flex-col justify-between gap-6 bg-background-100 dark:bg-background-600 rounded-lg p-4"
       >
         <div>
-          <div class="font-medium">Role</div>
+          <div class="font-medium text-lg">Role</div>
           <p class="text-zinc-700 dark:text-zinc-300">UX Designer</p>
         </div>
         <div>
-          <div>Timeline</div>
+          <div class='text-lg'>Timeline</div>
           <div class="text-zinc-700 dark:text-zinc-300">
             March 2023 - April 2023
           </div>
         </div>
         <div>
-          <div class="font-medium mb-2">Responsibilities</div>
+          <div class="text-lg mb-2">Responsibilities</div>
           <ul
             class="text-zinc-700 dark:text-zinc-300 flex flex-wrap gap-x-3 gap-y-2"
           >

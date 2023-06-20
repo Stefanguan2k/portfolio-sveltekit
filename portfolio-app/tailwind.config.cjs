@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        green: '0 4px 6px -1px rgba(0,100,100,0.3)',
+        green: '0 4px 6px rgba(142,200,180,0.2)',
+        purple:'0 4px 6px rgba(202,188,230,0.2)',
       },
       colors: {
         main: {

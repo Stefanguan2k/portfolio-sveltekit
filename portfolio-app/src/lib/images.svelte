@@ -2,6 +2,9 @@
   export let path, alt, classList;
 </script>
 
+<!-- Usage: -->
+<!-- <ImgContainer path="" alt="" classList="" /> -->
+
 <a
   href={path}
   class="hover:-translate-y-1 hover:shadow-lg transition ease-in-out rounded-lg overflow-hidden {classList}"

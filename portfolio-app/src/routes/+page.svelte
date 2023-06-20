@@ -73,22 +73,23 @@
     <div
       class="grid gap-6 h-full w-full content-start grid-rows-auto md:grid-cols-2 md:grid-rows:2 md:content-stretch"
     >
-      <a href="../swiftvote"
-        ><ProjCard
-          name="SwiftVote"
-          role="UX Case Study"
-          theme="rgba(0,100,100,0.5)"
-          img="../src/assets/img/index-swiftvote.png"
-          icon="figma"
-          n="1"
-        />
-      </a>
+      <ProjCard
+        name="SwiftVote"
+        role="UX Case Study"
+        theme="rgba(0,100,100,0.5)"
+        img="../src/assets/img/index-swiftvote.png"
+        path="../swiftvote"
+        icon="figma"
+        n="1"
+      />
+
       <ProjCard
         name="Oasis"
         role="UX Case Study"
         theme="rgba(50,0,100,0.5)"
         img="../src/assets/img/index-oasis.png"
         icon="xd"
+        path="../oasis"
         n="1"
       />
       <ProjCard
