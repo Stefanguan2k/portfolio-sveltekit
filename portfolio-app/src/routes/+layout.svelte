@@ -7,7 +7,7 @@
 
 <Navbar />
 <body
-  class="bg-background-300 dark:bg-background-900 max-w-[1100px] flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 mx-auto"
+  class="bg-background-300 dark:bg-background-900 max-w-[1280px] flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 mx-auto md:pl-24"
 >
   <slot />
   <Footer />
