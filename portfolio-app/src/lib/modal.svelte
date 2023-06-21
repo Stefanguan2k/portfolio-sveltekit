@@ -52,7 +52,8 @@
   <div class="flex flex-col">
     <a
       href="https://www.figma.com/proto/vWjOCqzVo7VJeMlT7ipUJV/SwiftVote-GoogleUX?page-id=64%3A5768&node-id=82-755&viewport=1268%2C147%2C0.13&scaling=scale-down&starting-point-node-id=82%3A719"
-      class="bg-background-700 rounded-tl-md rounded-tr-md py-4 px-4 flex justify-between items-center md:gap-24 fill-zinc-300 hover:bg-background-500"
+      target="_blank"
+      class="bg-background-700/50 rounded-tl-md rounded-tr-md py-4 px-4 flex justify-between items-center md:gap-24 fill-zinc-300 hover:bg-background-500"
     >
       <div class="flex gap-4 items-center">
         <svg
@@ -81,7 +82,8 @@
     </div>
     <a
       href="https://www.figma.com/proto/vWjOCqzVo7VJeMlT7ipUJV/SwiftVote-GoogleUX?page-id=155%3A1252&node-id=315-6231&viewport=-518%2C-685%2C0.07&scaling=scale-down&starting-point-node-id=315%3A6231&show-proto-sidebar=1"
-      class="bg-background-700 rounded-bl-md rounded-br-md py-4 px-4 flex justify-between items-center fill-zinc-300 hover:bg-background-500"
+      target="_blank"
+      class="bg-background-700/50 rounded-bl-md rounded-br-md py-4 px-4 flex justify-between items-center fill-zinc-300 hover:bg-background-500"
     >
       <div class="flex gap-4 items-center">
         <svg

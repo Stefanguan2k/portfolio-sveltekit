@@ -70,7 +70,7 @@
           <p class="text-zinc-700 dark:text-zinc-300">UX Designer</p>
         </div>
         <div>
-          <div class='text-lg'>Timeline</div>
+          <div class="text-lg">Timeline</div>
           <div class="text-zinc-700 dark:text-zinc-300">
             March 2023 - April 2023
           </div>
@@ -215,6 +215,7 @@
         src="../src/assets/img/sv-digital-wireframe.webp"
         alt="A digital wireframe for the swiftvote app"
         class="w-full max-w-[800px] self-center bg-background-600"
+        loading="lazy"
       />
     </a>
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
@@ -476,17 +477,19 @@
     </p>
     <div class="flex gap-6 flex-wrap text-zinc-100 w-full justify-center">
       <button
-        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full hover:bg-[rgba(90,90,90,0.5)] bg-[#308264] hover:bg-[#2f614f]"
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[#308264] hover:bg-[#2f614f]"
         on:click={toggle.toggleModal()}
       >
         <img src="../src/assets/svg/figma.svg" alt="" class="h-7 w-7" />
         <div>Prototypes</div>
       </button>
-      <a class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[#308264] hover:bg-[#2f614f]" href='../src/assets/pdf/swiftvote-slide-deck.pdf'>
-        <img src='../src/assets/svg/pdf.svg' alt="" class="h-7 w-7" />
+      <a
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[#308264] hover:bg-[#2f614f]"
+        href="../src/assets/pdf/swiftvote-slide-deck.pdf"
+      >
+        <img src="../src/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
         <div class="data-[type='circleblur']:hidden">Slide Deck</div>
       </a>
-
     </div>
   </section>
 </div>

@@ -2,8 +2,11 @@
   import { inview } from 'svelte-inview';
   import NavIndex from '../lib/nav.svelte';
   import ProjCard from '../lib/project-card.svelte';
+  import SocialOverlay from '../lib/social-overlay.svelte';
 
+  let toggle;
   let isInView;
+
   const options = {
     threshold: 0.4,
     rootMargin: '0px',
@@ -47,12 +50,28 @@
     <h1 class="z-10 font-thin text-3xl">
       Hi, I am Stefan Guan, a UX/Web Designer based in Surrey, BC.
     </h1>
+    <!-- Background -->
     <div
       class="absolute h-full w-full bg-gradient-to-tl from-main-100 to-violet-900 opacity-50"
-    >
-      <!-- Background -->
+    />
+    <div class="absolute top-0 right-0 mt-6 mr-6">
+      <button
+        class="flex gap-3 justify-center items-center rounded-full p-3 backdrop-blur-md bg-[rgba(25,25,25,0.5)] hover:bg-[rgba(90,90,90,0.5)]" on:click={toggle.toggleOverlay()}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="1em"
+          viewBox="0 0 448 512"
+          class="h-7 w-7 fill-zinc-300"
+          ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+            d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"
+          /></svg
+        >
+      </button>
     </div>
+    <SocialOverlay bind:this={toggle}/>
   </section>
+
   <!-- Projects -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6

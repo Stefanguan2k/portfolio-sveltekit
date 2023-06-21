@@ -13,5 +13,6 @@
     src={path}
     alt={alt}
     class="w-full max-w-[800px] self-center bg-background-100 dark:bg-background-600"
+    loading="lazy"
   />
 </a>

@@ -1,11 +1,8 @@
 <script>
   import Button from '/src/lib/cta-btn.svelte';
-  import Modal from '/src/lib/modal.svelte';
   import ImgContainer from '/src/lib/images.svelte';
   let toggle;
 </script>
-
-<Modal bind:this={toggle} />
 
 <div
   class="flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 max-w-[1280px] m-auto mb-64"
@@ -502,47 +499,24 @@
       </div>
     </div>
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      Thus, with consideration of the insights, I implemented the changes into
-      the mockups of the design. In addition, I utilized iconography,
-      typography, and colour to make it a more polished iteration.
+      The insights were consequently implemented into the next iteration of the
+      designs—the mockups.
     </p>
     <ImgContainer
-      path="../src/assets/img/sv-before-after.webp"
-      alt="A comparison between the digital wireframe and the mockup of the first registration screen"
+      path="../src/assets/img/oasis-before-and-after.webp"
+      alt="A comparison between the digital wireframe and the mockup of the home and booking screens"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/sv-mockups.webp"
-      alt="Mockups of the different screens (home, confirmation, appointment, settings, and electoral participant)"
-      classList=""
-    />
-  </section>
-  <!-- Hifi Prototype -->
-  <section
-    class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
-    md:p-10 md:ml-24 md:gap-12"
-  >
-    <!-- Top bar -->
-    <h2 class="text-2xl font-bold self-start md:self-center">
-      High-Fidelity Prototype
-    </h2>
-    <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      After creating each screen of the mockups, I created a high-fidelity
-      prototype. This iteration contains a similar user flow when compared to
-      the low-fidelity prototype. However, this prototype features changes that
-      were prompted by the usability study.
-    </p>
-    <ImgContainer
-      path="../src/assets/img/sv-hifi-proto.webp"
-      alt="High-fidelity prototype of the swiftvote app"
+      path="../src/assets/img/oasis-mockups.png"
+      alt="Mockups of the different screens (home, search, listing, book together, and settings)"
       classList=""
     />
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      While creating the high-fidelity prototypes, I ensured that I designed
-      with accessibility in mind. For instance, some of the accessibility
-      considerations include,
+      Additionally, the mockups were crafted with the following accessibility
+      features in mind.
     </p>
-    <!-- Accessibility container -->
+    <!-- Accessibility Container -->
     <div class="flex flex-wrap justify-center gap-6 w-full">
       <div
         class="flex flex-col gap-6 p-6 bg-background-100 dark:bg-background-600 rounded-md overflow-hidden md:w-[352px]"
@@ -552,16 +526,17 @@
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 576 512"
-            class="w-6 h-6 fill-[#308266] dark:fill-[#90c7b4]"
-            ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
+            ><path
               d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"
             /></svg
           >
+
           <div class="text-lg">Hierarchy</div>
         </div>
         <p>
-          Clear and consistent use of font sizes for different elements (e.g.,
-          heading, paragraphs) inform the visual hierarchy of each screen.
+          Clear and consistent text styles inform the visual hierarchy of each
+          page.
         </p>
       </div>
       <div
@@ -572,16 +547,16 @@
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 512 512"
-            class="w-6 h-6 fill-[#308266] dark:fill-[#90c7b4]"
+            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
             ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
-              d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
+              d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6h96 32H424c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"
             /></svg
           >
-          <div class="text-lg">Contrast</div>
+          <div class="text-lg">Alt Text</div>
         </div>
         <p>
-          Important elements have high contrast, making it stand out from the
-          background (e.g., buttons, toggles).
+          As there is a heavy emphasis on images, each image contains alt text
+          to help screen readers identify the content of the pictures.
         </p>
       </div>
       <div
@@ -590,57 +565,45 @@
         <div class="flex items-center gap-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height="1em"
-            viewBox="0 0 448 512"
-            class="w-6 h-6 fill-[#308266] dark:fill-[#90c7b4]"
-            ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
-              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-            /></svg
+            viewBox="0 0 512 512"
+            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
           >
-          <div class="text-lg">Simple Navigation</div>
+            <path
+              d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
+            />
+          </svg>
+          <div class="text-lg">Contrast</div>
         </div>
         <p>
-          The app features a navigation bar that enables users to quickly jump
-          between the most important screens. It is both familiar and
-          easy-to-use.
+          Important elements have high contrast, making it stand out from the
+          background.
         </p>
       </div>
     </div>
   </section>
-  <!-- Responsive Design -->
+  <!-- Final Designe -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
     md:p-10 md:ml-24 md:gap-12"
   >
     <!-- Top bar -->
-    <h2 class="text-2xl font-bold self-start md:self-center">
-      Responsive Design
-    </h2>
-    <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      After designing the app, I began working on the complementary responsive
-      website. The website enables users who use do not want to download an app
-      or use a larger device to access the service. I first created a sitemap to
-      visualize the organization of the pages to maintain consistency through
-      the experiences.
-    </p>
+    <h2 class="text-2xl font-bold self-start md:self-center">Final Design</h2>
     <ImgContainer
-      path="../src/assets/img/sv-sitemap.webp"
-      alt="Sitemap of the swiftvote website experience"
+      path="../src/assets/img/oasis-finalbk.webp"
+      alt="Mockups of the final oasis website"
       classList=""
     />
-    <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      With the sitemap in mind, I designed variations of the website for mobile,
-      tablet, and desktop screen sizes. I kept the same design language
-      throughout the experiences to ensure consistency. Furthermore, as various
-      screen sizes can fit fewer or more elements, I took advantage of the
-      avaliable space. For instance, the desktop website has a persistent side
-      bar that shows relevant information depending on the screen.
-    </p>
-    <ImgContainer
-      path="../src/assets/img/sv-responsive-designs.webp"
-      alt="Mockups of the home screen on different formats (Left = mobile, center = tablet, right = desktop)"
-      classList=""
-    />
+    <a
+      href="../src/assets/img/oasis-style-guide.webp"
+      class="hover:-translate-y-1 hover:shadow-lg transition ease-in-out rounded-lg overflow-hidden"
+    >
+      <img
+        src="../src/assets/img/oasis-style-guide.webp"
+        alt="Oasis style guide"
+        class="w-full max-w-[800px] self-center bg-background-600"
+        loading="lazy"
+      />
+    </a>
   </section>
   <!-- Concluding Thoughts -->
   <section
@@ -652,34 +615,26 @@
       Concluding Thoughts
     </h2>
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      The SwiftVote project has been an invaluable learning experience. It is a
-      case study focused on designing for the greater good. In this case, I
-      tackled the problem of non-voters. I conducted research into why some
-      individuals decide not to vote. For instance, some stated difficulty when
-      scheduling for an election. Thus, I designed a method to check how many
-      people sign up for any given voting session. Through user-centred design,
-      I was able to solve problems that would otherwise prevent people from
-      voting.<br /><br />
-      Furthermore, this project served as a great opportunity regarding designing
-      for different mediums. I had to consider how a user would use the service on
-      various platforms and how to best utilize the space each device affords. I
-      believe that by going through the design process, I created a cohesive experience
-      that emphasizes consistency.<br /><br />
-      Given more time, I could further optimize the space utilization for the differing
-      screen sizes.<br /><br />
-      Thank you for taking the time out of your day to check my case study on SwiftVote.
+      The Oasis project has been an extremely rewarding experience. I had the
+      opportunity to learn the ropes of Adobe XD and apply the design process at
+      the same time. I also got to delve into the realm of responsive web
+      design, which is crucial in today's landscape.<br /><br />
+      Overall, I could not implement all of the features I wanted to due to the lack
+      of time. However, those ideas may be realized in future designs.<br /><br
+      />
+      Thank you for taking the time out of your day to check my case study on Oasis.
     </p>
     <div class="flex gap-6 flex-wrap text-zinc-100 w-full justify-center">
-      <button
-        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full hover:bg-[rgba(90,90,90,0.5)] bg-[#308264] hover:bg-[#2f614f]"
-        on:click={toggle.toggleModal()}
-      >
-        <img src="../src/assets/svg/figma.svg" alt="" class="h-7 w-7" />
-        <div>Prototypes</div>
-      </button>
       <a
-        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[#308264] hover:bg-[#2f614f]"
-        href="../src/assets/pdf/swiftvote-slide-deck.pdf"
+        href="https://xd.adobe.com/view/99a46e1a-a8af-487b-a735-d5923365ea9f-ccf7/?fullscreen"
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)]"
+      >
+        <img src="../src/assets/svg/xd.svg" alt="" class="h-7 w-7" />
+        <div>Prototype</div>
+      </a>
+      <a
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)]"
+        href="../src/assets/pdf/oasis-slide-deck.pdf"
       >
         <img src="../src/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
         <div class="data-[type='circleblur']:hidden">Slide Deck</div>
