@@ -36,8 +36,7 @@
 >
   <!-- Home -->
   <section
-    class="relative flex flex-col justify-center items-center min-h-[80vh] mt-4 p-10 rounded-2xl overflow-hidden
-    md:ml-24"
+    class="relative flex flex-col justify-center items-center min-h-[80vh] mt-4 p-10 rounded-2xl overflow-hidden"
     id="home"
     use:inview={options}
     on:inview_enter={(event) => {
@@ -56,7 +55,8 @@
     />
     <div class="absolute top-0 right-0 mt-6 mr-6">
       <button
-        class="flex gap-3 justify-center items-center rounded-full p-3 backdrop-blur-md bg-[rgba(25,25,25,0.5)] hover:bg-[rgba(90,90,90,0.5)]" on:click={toggle.toggleOverlay()}
+        class="flex gap-3 justify-center items-center rounded-full p-3 backdrop-blur-md bg-[rgba(25,25,25,0.5)] hover:bg-[rgba(90,90,90,0.5)]"
+        on:click={toggle.toggleOverlay()}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,13 +69,13 @@
         >
       </button>
     </div>
-    <SocialOverlay bind:this={toggle}/>
+    <SocialOverlay bind:this={toggle} />
   </section>
 
   <!-- Projects -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6
-    md:p-10 md:ml-24"
+    md:p-10"
     id="projects"
     use:inview={options}
     on:inview_enter={(event) => {
@@ -132,7 +132,7 @@
   <!-- About Me -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6
-    md:p-10 md:ml-24"
+    md:p-10"
     id="aboutme"
     use:inview={options}
     on:inview_enter={(event) => {
@@ -189,8 +189,8 @@
   </section>
   <!-- Contact Me -->
   <section
-    class="min-h-[90vh] py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 mb-10 md:mb-12
-    md:p-10 md:ml-24"
+    class="min-h-[90vh] py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11
+    md:p-10"
     id="contact"
     use:inview={options}
     on:inview_enter={(event) => {

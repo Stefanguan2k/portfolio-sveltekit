@@ -5,12 +5,12 @@
 </script>
 
 <div
-  class="flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 max-w-[1280px] m-auto mb-64"
+  class="flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 max-w-[1280px] m-auto"
 >
   <!-- Hero -->
   <section
     class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-purple
-    md:ml-24 md:h-[50vh]"
+    md:h-[50vh]"
     style="background-image: url('../src/assets/img/index-oasis.png')"
   >
     <svg
@@ -168,7 +168,7 @@
   <!-- Summary -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-6
-    md:p-10 md:ml-24"
+    md:p-10"
   >
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center text">Summary</h2>
@@ -248,7 +248,7 @@
   <!-- Research -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
-    md:p-10 md:ml-24 md:gap-12"
+    md:p-10 md:gap-12"
   >
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">Research</h2>
@@ -378,7 +378,7 @@
   <!-- Starting the Design -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
-  md:p-10 md:ml-24 md:gap-12"
+  md:p-10 md:gap-12"
   >
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">
@@ -424,7 +424,7 @@
   <!-- User Testing -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
-    md:p-10 md:ml-24 md:gap-12"
+    md:p-10 md:gap-12"
   >
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">User Testing</h2>
@@ -584,7 +584,7 @@
   <!-- Final Designe -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
-    md:p-10 md:ml-24 md:gap-12"
+    md:p-10 md:gap-12"
   >
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">Final Design</h2>
@@ -608,7 +608,7 @@
   <!-- Concluding Thoughts -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
-    md:p-10 md:ml-24 md:gap-12"
+    md:p-10 md:gap-12"
   >
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">
