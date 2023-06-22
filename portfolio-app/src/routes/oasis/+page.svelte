@@ -4,8 +4,15 @@
   let toggle;
 </script>
 
+<svelte:head>
+  <title>Oasis Case Study - Stefan Guan</title>
+  <meta name="description" content="Oasis, a Google UX Design case study" />
+  <meta name="keywords" content="UX, Responsive Design, Case Study" />
+  <meta name="author" content="Stefan Guan" />
+</svelte:head>
+
 <div
-  class="flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 max-w-[1280px] m-auto"
+  class="bg-background-300 dark:bg-background-900 max-w-[1280px] flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 mx-auto md:pl-24"
 >
   <!-- Hero -->
   <section
@@ -151,7 +158,7 @@
     <div class="absolute bottom-0 right-0 mb-6 mr-6 flex gap-4">
       <Button
         icon="../src/assets/svg/xd.svg"
-        text="Slide Deck"
+        text="Adobe XD Prototype"
         theme="rgba(50,50,50,0.5)"
         type="circleblur"
         location="https://xd.adobe.com/view/99a46e1a-a8af-487b-a735-d5923365ea9f-ccf7/?fullscreen"
@@ -627,13 +634,13 @@
     <div class="flex gap-6 flex-wrap text-zinc-100 w-full justify-center">
       <a
         href="https://xd.adobe.com/view/99a46e1a-a8af-487b-a735-d5923365ea9f-ccf7/?fullscreen"
-        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)]"
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
       >
         <img src="../src/assets/svg/xd.svg" alt="" class="h-7 w-7" />
         <div>Prototype</div>
       </a>
       <a
-        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)]"
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
         href="../src/assets/pdf/oasis-slide-deck.pdf"
       >
         <img src="../src/assets/svg/pdf.svg" alt="" class="h-7 w-7" />

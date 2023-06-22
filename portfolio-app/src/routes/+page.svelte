@@ -28,15 +28,21 @@
   // };
 </script>
 
+<svelte:head>
+  <title>Stefan Guan's Portfolio</title>
+  <meta name="description" content="Stefan Guan's UX Portfolio" />
+  <meta name="keywords" content="UX Design, Portfolio, Case Studies" />
+  <meta name="author" content="Stefan Guan" />
+</svelte:head>
+
 <NavIndex bind:updateActive={changeIndx} />
 
 <div
-  class="flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 max-w-[1280px] m-auto mb-0"
-  id="container"
+  class="bg-background-300 dark:bg-background-900 max-w-[1280px] flex flex-col gap-6 text-zinc-800 dark:text-zinc-200 mx-auto md:pl-24"
 >
   <!-- Home -->
   <section
-    class="relative flex flex-col justify-center items-center min-h-[80vh] mt-4 p-10 rounded-2xl overflow-hidden"
+    class="relative flex flex-col justify-center items-center min-h-[80vh] mt-4 p-10 rounded-2xl overflow-hidden w-full"
     id="home"
     use:inview={options}
     on:inview_enter={(event) => {
@@ -55,14 +61,14 @@
     />
     <div class="absolute top-0 right-0 mt-6 mr-6">
       <button
-        class="flex gap-3 justify-center items-center rounded-full p-3 backdrop-blur-md bg-[rgba(25,25,25,0.5)] hover:bg-[rgba(90,90,90,0.5)]"
+        class="flex gap-3 justify-center items-center rounded-full p-3 backdrop-blur-md bg-[rgba(25,25,25,0.5)] hover:bg-[rgba(90,90,90,0.5)] hover:shadow-lg transition ease-ios-smooth duration-500"
         on:click={toggle.toggleOverlay()}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="1em"
           viewBox="0 0 448 512"
-          class="h-7 w-7 fill-zinc-300"
+          class="h-6 w-6 fill-zinc-300"
           ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
             d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"
           /></svg
@@ -74,7 +80,7 @@
 
   <!-- Projects -->
   <section
-    class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6 w-full
     md:p-10"
     id="projects"
     use:inview={options}
@@ -117,6 +123,7 @@
         theme="rgba(95,50,0,0.5)"
         img="../src/assets/img/index-yopo.png"
         icon="codefigma"
+        path="../yopo"
         n="2"
       />
       <ProjCard
@@ -125,13 +132,14 @@
         theme="rgba(0,50,100,0.5)"
         img="../src/assets/img/index-munch.png"
         icon="figma"
+        path="../munch"
         n="1"
       />
     </div>
   </section>
   <!-- About Me -->
   <section
-    class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6
+    class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col gap-6 w-full
     md:p-10"
     id="aboutme"
     use:inview={options}
@@ -189,7 +197,7 @@
   </section>
   <!-- Contact Me -->
   <section
-    class="min-h-[90vh] py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11
+    class="min-h-[90vh] py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 w-full
     md:p-10"
     id="contact"
     use:inview={options}

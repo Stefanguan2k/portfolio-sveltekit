@@ -24,7 +24,7 @@
   
 </script>
 
-<a href={path}>
+<a href={path} class='hover:shadow-lg transition ease-ios-smooth duration-500'>
   <div
     class="flex items-end w-full h-96 rounded-md overflow-hidden bg-cover bg-center text-zinc-200
       md:justify-center md:flex-wrap md:w-full"
