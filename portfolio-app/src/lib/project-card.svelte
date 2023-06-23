@@ -1,13 +1,13 @@
 <script>
   export let name, role, theme, img, icon, n, path;
   let iconLink;
-  
+
   const icons = {
     figma: '../src/assets/svg/figma.svg',
     xd: '../src/assets/svg/xd.svg',
     code: '../src/assets/svg/code.svg',
   };
-  
+
   if (n === '1') {
     switch (icon) {
       case 'figma':
@@ -20,11 +20,9 @@
   } else {
     iconLink = icons.figma;
   }
-
-  
 </script>
 
-<a href={path} class='hover:shadow-lg transition ease-ios-smooth duration-500'>
+<a href={path} class="hover:shadow-lg transition ease-ios-smooth duration-500">
   <div
     class="flex items-end w-full h-96 rounded-md overflow-hidden bg-cover bg-center text-zinc-200
       md:justify-center md:flex-wrap md:w-full"
@@ -39,12 +37,12 @@
         <span id="role" class="ml-8">{role}</span>
       </div>
       <div class="self-center justify-self-end mr-8 flex gap-4">
-          <img
-            src="../src/assets/svg/code.svg"
-            alt=""
-            class="h-5 w-5 hidden data-[show='2']:block"
-            data-show={n}
-          />
+        <img
+          src="../src/assets/svg/code.svg"
+          alt=""
+          class="h-5 w-5 hidden data-[show='2']:block"
+          data-show={n}
+        />
         <img src={iconLink} alt="" class="h-5 w-5" />
       </div>
     </div>

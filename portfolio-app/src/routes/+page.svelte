@@ -209,5 +209,91 @@
     }}
   >
     <h2 class="text-2xl font-bold">Contact</h2>
+
+    <form class="flex flex-col gap-2">
+      <div class="relative">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+          placeholder=" "
+        />
+        <label
+          for="name"
+          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
+            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
+          >Name</label
+        >
+      </div>
+      <div class="relative">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+          placeholder=" "
+        />
+        <label
+          for="email"
+          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
+            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
+          >Email</label
+        >
+      </div>
+      <div class="relative">
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+          placeholder=" "
+        />
+        <label
+          for="subject"
+          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
+            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
+          >Subject</label
+        >
+      </div>
+      <div class="relative">
+        <textarea
+          name="message"
+          id="message"
+          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+          placeholder=" "
+        />
+        <label
+          for="subject"
+          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
+            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
+          >Message</label
+        >
+      </div>
+
+    </form>
+
+    <!-- Recaptcha Widget -->
+    <div
+      class="flex justify-between items-center px-6 py-4 rounded-lg bg-gradient-to-r from-[#02091a] to-[#203350]"
+    >
+      <div>Protected by reCAPTCHA</div>
+      <div class="flex gap-2">
+        <a
+          href="https://policies.google.com/privacy"
+          class="bg-zinc-500/25 p-3 text-xs rounded-md hover:bg-zinc-500/40 hover:shadow-md hover:translate-y-[-1px] transition ease-ios-smooth duration-500"
+          >Privacy</a
+        >
+        <a
+          href="https://policies.google.com/terms"
+          class="bg-zinc-500/25 p-3 text-xs rounded-md hover:bg-zinc-500/40 hover:shadow-md hover:translate-y-[-1px] transition ease-ios-smooth duration-500"
+          >Terms</a
+        >
+      </div>
+    </div>
   </section>
 </div>
