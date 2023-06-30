@@ -5,10 +5,14 @@
   import SocialOverlay from '../lib/social-overlay.svelte';
 
   let toggle;
+  let nameInput;
+  let emailInput;
+  let subjectInput;
+  let messageInput;
   let isInView;
 
   const options = {
-    threshold: 0.4,
+    threshold: 0.2,
     rootMargin: '0px',
   };
 
@@ -42,7 +46,7 @@
 >
   <!-- Home -->
   <section
-    class="relative flex flex-col justify-center items-center min-h-[80vh] mt-4 p-10 rounded-2xl overflow-hidden w-full"
+    class="relative flex flex-col justify-center items-center min-h-[80vh] mt-4 p-10 rounded-2xl w-full"
     id="home"
     use:inview={options}
     on:inview_enter={(event) => {
@@ -52,14 +56,19 @@
       change();
     }}
   >
-    <h1 class="z-10 font-thin text-3xl">
+    <h1 class="z-10 font-thin text-3xl z-20">
       Hi, I am Stefan Guan, a UX/Web Designer based in Surrey, BC.
     </h1>
     <!-- Background -->
     <div
-      class="absolute h-full w-full bg-gradient-to-tl from-main-100 to-violet-900 opacity-50"
+      class="absolute h-full w-full bg-gradient-to-tl from-main-100 to-violet-600 dark:to-violet-900 brightness-150 saturate-[0.55] dark:brightness-75 dark:saturate-100 rounded-2xl z-10"
     />
-    <div class="absolute top-0 right-0 mt-6 mr-6">
+    <!-- Shadow -->
+    <div
+      class="absolute h-full w-full bg-gradient-to-tl from-main-100 to-violet-600 dark:to-violet-900 brightness-150 saturate-[0.55] dark:brightness-50 dark:saturate-100 translate-y-2 blur-md opacity-40"
+    />
+
+    <div class="absolute top-0 right-0 mt-6 mr-6 z-20">
       <button
         class="flex gap-3 justify-center items-center rounded-full p-3 backdrop-blur-md bg-[rgba(25,25,25,0.5)] hover:bg-[rgba(90,90,90,0.5)] hover:shadow-lg transition ease-ios-smooth duration-500"
         on:click={toggle.toggleOverlay()}
@@ -102,7 +111,7 @@
         name="SwiftVote"
         role="UX Case Study"
         theme="rgba(0,100,100,0.5)"
-        img="../src/assets/img/index-swiftvote.png"
+        img="../src/assets/img/index/index-swiftvote.png"
         path="../swiftvote"
         icon="figma"
         n="1"
@@ -112,7 +121,7 @@
         name="Oasis"
         role="UX Case Study"
         theme="rgba(50,0,100,0.5)"
-        img="../src/assets/img/index-oasis.png"
+        img="../src/assets/img/index/index-oasis.png"
         icon="xd"
         path="../oasis"
         n="1"
@@ -121,7 +130,7 @@
         name="Yopo"
         role="Web Design"
         theme="rgba(95,50,0,0.5)"
-        img="../src/assets/img/index-yopo.png"
+        img="../src/assets/img/index/index-yopo.png"
         icon="codefigma"
         path="../yopo"
         n="2"
@@ -130,7 +139,7 @@
         name="Munch"
         role="UX Case Study"
         theme="rgba(0,50,100,0.5)"
-        img="../src/assets/img/index-munch.png"
+        img="../src/assets/img/index/index-munch.png"
         icon="figma"
         path="../munch"
         n="1"
@@ -160,7 +169,7 @@
     >
       <div class="self-center justify-self-center">
         <img
-          src="../src/assets/img/profile-img.webp"
+          src="../src/assets/img/index/profile-img.webp"
           alt="Portait of myself"
           class="rounded-md h-56 w-56"
         />
@@ -197,7 +206,7 @@
   </section>
   <!-- Contact Me -->
   <section
-    class="min-h-[90vh] py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 w-full
+    class="h-max py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 w-full
     md:p-10"
     id="contact"
     use:inview={options}
@@ -208,91 +217,197 @@
       change();
     }}
   >
-    <h2 class="text-2xl font-bold">Contact</h2>
+    <h2 class="text-2xl font-bold mb-6">Contact</h2>
+    <div class="flex flex-col md:flex-row gap-6">
+      <div
+        class="flex flex-col bg-background-100 dark:bg-background-600 rounded-md p-4 w-full gap-4"
+      >
+        <p>Let's get in touch!</p>
+        <p>
+          I would love the chance to get in contact with you! You may use the
+          form for convenience or you can connect with me using the links below.
+        </p>
+        <div class="flex flex-col gap-4">
+          <a
+            href="mailto:stefan.guan@outlook.com"
+            class="flex gap-2 text-sm items-center fill-zinc-700 dark:fill-zinc-300 w-max"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 512 512"
+              class="w-5 h-5"
+              ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+              /></svg
+            >
+            <div>stefan.guan@outlook.com</div></a
+          >
+          <a
+            href="mailto:stefan.guan@outlook.com"
+            class="flex gap-2 text-sm items-center fill-zinc-700 dark:fill-zinc-300 w-max"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+              class="w-5 h-5"
+              ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+              /></svg
+            >
+            <div>Stefan Guan</div></a
+          >
+        </div>
+      </div>
+      <div class="w-full">
+        <form class="flex flex-col gap-2">
+          <div class="relative">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              bind:this={nameInput}
+              class="block focus:shadow-md bg-transparent rounded-md pl-3 pr-9 pt-4 pb-2 peer w-full border-2 border-background-400 dark:border-background-500 focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="name"
+              class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-main-100 dark:peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4 select-none text-zinc-800 dark:text-zinc-300
+                  peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+                  peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100 peer-placeholder-shown:text-zinc-600 dark:peer-placeholder-shown:text-zinc-400"
+              >Name</label
+            >
+            <button
+              class="absolute top-[50%] right-3 translate-y-[-50%] inline-block peer-placeholder-shown:hidden p-1 rounded-full bg-background-400/70"
+              on:click={(nameInput.value = '')}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 384 512"
+                class="h-3 w-3 fill-zinc-600"
+                ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                /></svg
+              >
+            </button>
+          </div>
+          <div class="relative">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              bind:this={emailInput}
+              class="block focus:shadow-md bg-transparent rounded-md pl-3 pr-9 pt-4 pb-2 peer w-full border-2 border-background-400 dark:border-background-500 focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="email"
+              class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-main-100 dark:peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4 select-none text-zinc-800 dark:text-zinc-300
+                  peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+                  peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100 peer-placeholder-shown:text-zinc-600 dark:peer-placeholder-shown:text-zinc-400"
+              >Email</label
+            >
+            <button
+              class="absolute top-[50%] right-3 translate-y-[-50%] inline-block peer-placeholder-shown:hidden p-1 rounded-full bg-background-400/70"
+              on:click={(emailInput.value = '')}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 384 512"
+                class="h-3 w-3 fill-zinc-600"
+                ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                /></svg
+              >
+            </button>
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              bind:this={subjectInput}
+              class="block focus:shadow-md bg-transparent rounded-md pl-3 pr-9 pt-4 pb-2 peer w-full border-2 border-background-400 dark:border-background-500 focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="subject"
+              class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-main-100 dark:peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4 select-none text-zinc-800 dark:text-zinc-300
+                  peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+                  peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100 peer-placeholder-shown:text-zinc-600 dark:peer-placeholder-shown:text-zinc-400"
+              >Subject</label
+            >
+            <button
+              class="absolute top-[50%] right-3 translate-y-[-50%] inline-block peer-placeholder-shown:hidden p-1 rounded-full bg-background-400/70"
+              on:click={(subjectInput.value = '')}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 384 512"
+                class="h-3 w-3 fill-zinc-600"
+                ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                /></svg
+              >
+            </button>
+          </div>
+          <div class="relative">
+            <textarea
+              name="message"
+              id="message"
+              bind:this={messageInput}
+              oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px';"
+              class="block overflow-y-hidden focus:shadow-md bg-transparent rounded-md pl-3 pr-9 pt-4 pb-2 peer w-full border-2 border-background-400 dark:border-background-500 focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
+              placeholder=" "
+              required
+            />
+            <label
+              for="message"
+              class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-main-100 dark:peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4 select-none text-zinc-800 dark:text-zinc-300
+                  peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
+                  peer-placeholder-shown:translate-y-0 peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:text-zinc-600 dark:peer-placeholder-shown:text-zinc-400"
+              >Message</label
+            >
+            <button
+              class="absolute top-4 right-3 translate-y-0 inline-block peer-placeholder-shown:hidden p-1 rounded-full bg-background-400/70"
+              on:click={(messageInput.value = '')}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 384 512"
+                class="h-3 w-3 fill-zinc-600"
+                ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                /></svg
+              >
+            </button>
+          </div>
+          <div class="text-xs my-4">
+            This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy" class="underline"
+              >Privacy Policy</a
+            >
+            and
+            <a href="https://policies.google.com/terms" class="underline"
+              >Terms of Service</a
+            > apply.
+          </div>
+          <button
+            class="bg-main-100 rounded-md p-4 text-zinc-100 hover:shadow-md hover:bg-main-100/70 transform ease-ios-smooth duration-500
+              data-[state='loading']:"
+            data-state="default"
+          >
+            Submit
+          </button>
+        </form>
 
-    <form class="flex flex-col gap-2">
-      <div class="relative">
-        <input
-          type="text"
-          name="name"
-          id="name"
-          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
-          placeholder=" "
-        />
-        <label
-          for="name"
-          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
-            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
-            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
-          >Name</label
-        >
-      </div>
-      <div class="relative">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
-          placeholder=" "
-        />
-        <label
-          for="email"
-          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
-            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
-            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
-          >Email</label
-        >
-      </div>
-      <div class="relative">
-        <input
-          type="text"
-          name="subject"
-          id="subject"
-          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
-          placeholder=" "
-        />
-        <label
-          for="subject"
-          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
-            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
-            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
-          >Subject</label
-        >
-      </div>
-      <div class="relative">
-        <textarea
-          name="message"
-          id="message"
-          class="block bg-background-500 rounded-md px-3 pt-4 pb-2 peer w-full border-2 border-transparent focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
-          placeholder=" "
-        />
-        <label
-          for="subject"
-          class="absolute text-sm transition ease-ios-smooth duration-500 left-[0.9rem] peer-focus:text-cyan-400 -translate-y-4 scale-75 top-4
-            peer-focus:-translate-y-4 peer-focus:top-4 peer-focus:scale-75 origin-[0]
-            peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:top-[50%] peer-placeholder-shown:scale-100"
-          >Message</label
-        >
-      </div>
-
-    </form>
-
-    <!-- Recaptcha Widget -->
-    <div
-      class="flex justify-between items-center px-6 py-4 rounded-lg bg-gradient-to-r from-[#02091a] to-[#203350]"
-    >
-      <div>Protected by reCAPTCHA</div>
-      <div class="flex gap-2">
-        <a
-          href="https://policies.google.com/privacy"
-          class="bg-zinc-500/25 p-3 text-xs rounded-md hover:bg-zinc-500/40 hover:shadow-md hover:translate-y-[-1px] transition ease-ios-smooth duration-500"
-          >Privacy</a
-        >
-        <a
-          href="https://policies.google.com/terms"
-          class="bg-zinc-500/25 p-3 text-xs rounded-md hover:bg-zinc-500/40 hover:shadow-md hover:translate-y-[-1px] transition ease-ios-smooth duration-500"
-          >Terms</a
-        >
+        <!-- Recaptcha Widget -->
       </div>
     </div>
   </section>

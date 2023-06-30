@@ -21,10 +21,10 @@
   <section
     class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-purple
     md:h-[50vh]"
-    style="background-image: url('../src/assets/img/index-yopo.png')"
+    style="background-image: url('../src/assets/img/index/index-yopo.png')"
   >
     <img
-      src="../src/assets/img/yopo-logo.webp"
+      src="../src/assets/img/yopo/yopo-logo.webp"
       alt=""
       class="w-max h-24 z-40 md:self-start md:ml-6 shadow-xl"
     />
@@ -293,17 +293,17 @@
       mobile users first, then scaling upwards for desktop.
     </p>
     <ImgContainer
-      path="../src/assets/img/yopo-sitemap.webp"
+      path="../src/assets/img/yopo/yopo-sitemap.webp"
       alt="Sitemap of the yopo website redesign"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/yopo-digital-wireframe-mobile.webp"
+      path="../src/assets/img/yopo/yopo-digital-wireframe-mobile.webp"
       alt="Mobile digital wireframe of the yopo redesign"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/yopo-digital-wireframe.webp"
+      path="../src/assets/img/yopo/yopo-digital-wireframe.webp"
       alt="Desktop digital wireframe of the yopo redesign"
       classList=""
     />
@@ -323,11 +323,11 @@
       feedback, I created mockups for both mobile and desktop.
     </p>
     <ImgContainer
-      path="../src/assets/img/yopo-hifi-mobile.webp"
+      path="../src/assets/img/yopo/yopo-hifi-mobile.webp"
       alt="Mobile high-fidelity digital wireframe of the yopo redesign"
       classList=""
     /><ImgContainer
-      path="../src/assets/img/yopo-hifi-desktop.webp"
+      path="../src/assets/img/yopo/yopo-hifi-desktop.webp"
       alt="Desktop high-fidelity digital wireframe of the yopo redesign"
       classList=""
     />
@@ -354,6 +354,7 @@
       <a
         href="https://xd.adobe.com/view/99a46e1a-a8af-487b-a735-d5923365ea9f-ccf7/?fullscreen"
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(36,46%,35%)] hover:bg-[hsl(36,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
+        target="_blank"
       >
         <img src="../src/assets/svg/link-out.svg" alt="" class="h-5 w-5" />
         <div>Live Website</div>

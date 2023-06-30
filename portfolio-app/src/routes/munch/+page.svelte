@@ -1,7 +1,15 @@
 <script>
   import Button from '/src/lib/cta-btn.svelte';
   import ImgContainer from '/src/lib/images.svelte';
-  let toggle;
+  let mockupPath = '../src/assets/img/munch/munch-mockup-light.webp';
+
+  const toggleMockup = () => {
+    if (mockupPath === '../src/assets/img/munch/munch-mockup-light.webp') {
+      mockupPath = '../src/assets/img/munch/munch-mockup-dark.webp';
+    } else {
+      mockupPath = '../src/assets/img/munch/munch-mockup-light.webp';
+    }
+  };
 </script>
 
 <svelte:head>
@@ -9,6 +17,11 @@
   <meta name="description" content="Munch, a Google UX Design case study" />
   <meta name="keywords" content="UX, App Design, Case Study" />
   <meta name="author" content="Stefan Guan" />
+  <link
+    rel="preload"
+    as="image"
+    href="../src/assets/img/munch/munch-mockup-dark.webp"
+  />
 </svelte:head>
 
 <div
@@ -16,9 +29,9 @@
 >
   <!-- Hero -->
   <section
-    class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-purple
+    class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-lightblue
     md:h-[50vh]"
-    style="background-image: url('../src/assets/img/index-munch.png')"
+    style="background-image: url('../src/assets/img/index/index-munch.png')"
   >
     <svg
       width="181"
@@ -195,39 +208,32 @@
       Starting the Design
     </h2>
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      With consideration of the user needs, I created a sitemap for the website.
-      The sitemap lays different paths users can take with the product. I found
-      it to be crucial when planning out the organization of the website.
+      I began the project by creating a user flow, which enabled a visualization
+      of a user ordering food.
     </p>
     <ImgContainer
-      path="../src/assets/img/oasis-sitemap.webp"
-      alt="Sitemap of the Oasis website"
+      path="../src/assets/img/munch/munch-userflow.webp"
+      alt="User flow of the food ordering"
       classList=""
     />
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      With the basic skeleton of the website completed, the next step was to
-      create paper wireframes. This allowed quickly iterate through ideas for
-      how the would look.
+      The preliminary user flow allowed me to understand what a user would
+      typically expect when trying to order food. I initally sketched six
+      different variations of the home screen.
     </p>
     <ImgContainer
-      path="../src/assets/img/oasis-paper-wireframe.webp"
-      alt="Paper wireframe of the oasis website"
+      path="../src/assets/img/munch/munch-sketch.webp"
+      alt="Various sketches of the home screen"
       classList=""
     />
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      After satisfactory paper wireframes, I converted the designs into digital
-      wireframes using Adobe XD. I created a pair of mobile and desktop
-      wireframes. Thus, the digital wireframes enabled the ability to gether
-      more feedback.
+      After deciding on which elements I wanted to keep, I repeated the process
+      with every screen. Thus, I translated the sketches into a wireframe in
+      Figma.
     </p>
     <ImgContainer
-      path="../src/assets/img/oasis-digital-wireframe.webp"
-      alt="Digital wireframe of the oasis website"
-      classList=""
-    />
-    <ImgContainer
-      path="../src/assets/img/oasis-digital-wireframe-mobile.webp"
-      alt="Digital wireframe of the mobile oasis website"
+      path="../src/assets/img/munch/munch-wireframe.webp"
+      alt="Digital wireframes of the Munch app"
       classList=""
     />
   </section>
@@ -239,11 +245,10 @@
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">User Testing</h2>
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      After connecting the wireframes into a low-fidelity prototype, I set out
-      to test it with a usability study. The parameters of the study include:
-      (1) An unmoderated usability study, (2) remote study in Canada, (3) five
-      particiapnts, and (4) a duration of 20-40 minutes. The data from the
-      usability study gave three important insights.
+      The first order of business is to conduct a usability study with my
+      low-fidelity prototype. I gave the participants a goal to order food and
+      monitored the steps they took. I then allowed time for user feedback,
+      which resulted in three critical insights.
     </p>
     <!-- Insight container -->
     <div class="flex flex-wrap justify-center gap-6 w-full">
@@ -254,80 +259,21 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
-            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
+            class="w-6 h-6 fill-[hsl(194,70%,60%)] dark:fill-[hsl(194,37%,64%)]"
           >
             <path
               d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64H80c-8.8 0-16-7.2-16-16s7.2-16 16-16H448c17.7 0 32-14.3 32-32s-14.3-32-32-32H64zM416 272a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
             />
           </svg>
 
-          <div class="text-lg">Saved Payment Methods</div>
+          <div class="text-lg">Payment Methods</div>
         </div>
         <p>
-          Users wanted a way select a previously used card for future bookings.
+          Users want to be able to select which card to pay with before
+          ordering. In addition, they want the card to appear more prominent to
+          ensure accurate payment selection.
         </p>
       </div>
-      <div
-        class="flex flex-col gap-6 p-6 bg-background-100 dark:bg-background-600 rounded-md overflow-hidden md:w-[352px]"
-      >
-        <div class="flex items-center gap-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
-          >
-            <path
-              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-            />
-          </svg>
-          <div class="text-lg">Navigation</div>
-        </div>
-        <p>
-          The current navigation bar do not sufficiently describe where an
-          element links to.
-        </p>
-      </div>
-      <div
-        class="flex flex-col gap-6 p-6 bg-background-100 dark:bg-background-600 rounded-md overflow-hidden md:w-[352px]"
-      >
-        <div class="flex items-center gap-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
-          >
-            <path
-              d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
-            />
-          </svg>
-          <div class="text-lg">Contrast</div>
-        </div>
-        <p>
-          Elements there were toggleable lacked contrast. Some users reported
-          not konwing whether an option was on or off.
-        </p>
-      </div>
-    </div>
-    <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      The insights were consequently implemented into the next iteration of the
-      designs—the mockups.
-    </p>
-    <ImgContainer
-      path="../src/assets/img/oasis-before-and-after.webp"
-      alt="A comparison between the digital wireframe and the mockup of the home and booking screens"
-      classList=""
-    />
-    <ImgContainer
-      path="../src/assets/img/oasis-mockups.png"
-      alt="Mockups of the different screens (home, search, listing, book together, and settings)"
-      classList=""
-    />
-    <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      Additionally, the mockups were crafted with the following accessibility
-      features in mind.
-    </p>
-    <!-- Accessibility Container -->
-    <div class="flex flex-wrap justify-center gap-6 w-full">
       <div
         class="flex flex-col gap-6 p-6 bg-background-100 dark:bg-background-600 rounded-md overflow-hidden md:w-[352px]"
       >
@@ -336,17 +282,16 @@
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 576 512"
-            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
-            ><path
-              d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"
+            class="w-6 h-6 fill-[hsl(194,70%,60%)] dark:fill-[hsl(194,37%,64%)]"
+            ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
             /></svg
           >
-
-          <div class="text-lg">Hierarchy</div>
+          <div class="text-lg">Ratings</div>
         </div>
         <p>
-          Clear and consistent text styles inform the visual hierarchy of each
-          page.
+          Users want a way to view a restaurant's ratings and also give their
+          own ratings.
         </p>
       </div>
       <div
@@ -357,63 +302,85 @@
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 512 512"
-            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
+            class="w-6 h-6 fill-[hsl(194,70%,60%)] dark:fill-[hsl(194,37%,64%)]"
             ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
-              d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6h96 32H424c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"
+              d="M367.2 412.5C335.9 434.9 297.5 448 256 448s-79.9-13.1-111.2-35.5l58-58c15.8 8.6 34 13.5 53.3 13.5s37.4-4.9 53.3-13.5l58 58zm90.7 .8c33.8-43.4 54-98 54-157.3s-20.2-113.9-54-157.3c9-12.5 7.9-30.1-3.4-41.3S425.8 45 413.3 54C369.9 20.2 315.3 0 256 0S142.1 20.2 98.7 54c-12.5-9-30.1-7.9-41.3 3.4S45 86.2 54 98.7C20.2 142.1 0 196.7 0 256s20.2 113.9 54 157.3c-9 12.5-7.9 30.1 3.4 41.3S86.2 467 98.7 458c43.4 33.8 98 54 157.3 54s113.9-20.2 157.3-54c12.5 9 30.1 7.9 41.3-3.4s12.4-28.8 3.4-41.3zm-45.5-46.1l-58-58c8.6-15.8 13.5-34 13.5-53.3s-4.9-37.4-13.5-53.3l58-58C434.9 176.1 448 214.5 448 256s-13.1 79.9-35.5 111.2zM367.2 99.5l-58 58c-15.8-8.6-34-13.5-53.3-13.5s-37.4 4.9-53.3 13.5l-58-58C176.1 77.1 214.5 64 256 64s79.9 13.1 111.2 35.5zM157.5 309.3l-58 58C77.1 335.9 64 297.5 64 256s13.1-79.9 35.5-111.2l58 58c-8.6 15.8-13.5 34-13.5 53.3s4.9 37.4 13.5 53.3zM208 256a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"
             /></svg
           >
-          <div class="text-lg">Alt Text</div>
+          <div class="text-lg">Support</div>
         </div>
         <p>
-          As there is a heavy emphasis on images, each image contains alt text
-          to help screen readers identify the content of the pictures.
-        </p>
-      </div>
-      <div
-        class="flex flex-col gap-6 p-6 bg-background-100 dark:bg-background-600 rounded-md overflow-hidden md:w-[352px]"
-      >
-        <div class="flex items-center gap-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="w-6 h-6 fill-[hsl(260,70%,60%)] dark:fill-[hsl(260,37%,64%)]"
-          >
-            <path
-              d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
-            />
-          </svg>
-          <div class="text-lg">Contrast</div>
-        </div>
-        <p>
-          Important elements have high contrast, making it stand out from the
-          background.
+          Users want a way to reach out when an order does not go the way they
+          expected.
         </p>
       </div>
     </div>
+    <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
+      The second round of usability studies uses a high-fidelity prototype,
+      allowing for further iterations on the mockups.
+    </p>
+    <ImgContainer
+      path="../src/assets/img/munch/munch-before-after.webp"
+      alt="A comparison between the digital wireframe (home screen and restaurant screen) before and after the usability study"
+      classList=""
+    />
   </section>
-  <!-- Final Designe -->
+  <!-- Final Design -->
   <section
     class="h-full py-8 px-4 bg-background-200 dark:bg-background-700 rounded-2xl scroll-mt-11 flex flex-col items-center gap-8
     md:p-10 md:gap-12"
   >
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">Final Design</h2>
-    <ImgContainer
-      path="../src/assets/img/oasis-finalbk.webp"
-      alt="Mockups of the final oasis website"
-      classList=""
-    />
-    <a
-      href="../src/assets/img/oasis-style-guide.webp"
-      class="hover:-translate-y-1 hover:shadow-lg transition ease-in-out rounded-lg overflow-hidden"
-    >
-      <img
-        src="../src/assets/img/oasis-style-guide.webp"
-        alt="Oasis style guide"
-        class="w-full max-w-[800px] self-center bg-background-600"
-        loading="lazy"
-      />
-    </a>
+    <ImgContainer path={mockupPath} alt="" classList="" />
+    <div class="flex gap-6 items-center">
+      <div
+        class="flex flex-col items-center gap-1 text-xs fill-zinc-700 dark:fill-zinc-300 text-zinc-700 dark:text-zinc-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="1em"
+          viewBox="0 0 512 512"
+          class="h-6 w-6"
+          ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+            d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"
+          /></svg
+        >
+        Light
+      </div>
+      <label
+        for="theme-toggle"
+        class="relative inline-flex items-center cursor-pointer"
+      >
+        <input
+          type="checkbox"
+          value=""
+          class="sr-only peer"
+          id="theme-toggle"
+          on:click={toggleMockup}
+        />
+        <span
+          class="w-16 h-8 bg-background-400 rounded-full peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-background-200 transition ease-ios-smooth duration-500
+          peer peer-checked:after:translate-x-[135%] peer-checked:bg-main-100
+          after:absolute after:bg-background-100 after:h-6 after:w-6 after:left-1 after:top-1 after:rounded-full after:shadow-sm after:transition after:ease-ios-smooth after:duration-500
+          dark:peer-focus:ring-background-700 dark:bg-background-500 dark:after:bg-zinc-300"
+        />
+      </label>
+      <div
+        class="flex flex-col items-center gap-1 text-xs fill-zinc-700 dark:fill-zinc-300 text-zinc-700 dark:text-zinc-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="1em"
+          viewBox="0 0 384 512"
+          class="h-6 w-6"
+          ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+          /></svg
+        >
+        Dark
+      </div>
+    </div>
   </section>
   <!-- Concluding Thoughts -->
   <section
@@ -425,26 +392,28 @@
       Concluding Thoughts
     </h2>
     <p class="text-zinc-700 dark:text-zinc-300 max-w-[800px]">
-      The Oasis project has been an extremely rewarding experience. I had the
-      opportunity to learn the ropes of Adobe XD and apply the design process at
-      the same time. I also got to delve into the realm of responsive web
-      design, which is crucial in today's landscape.<br /><br />
-      Overall, I could not implement all of the features I wanted to due to the lack
-      of time. However, those ideas may be realized in future designs.<br /><br
-      />
-      Thank you for taking the time out of your day to check my case study on Oasis.
+      As part of the Google UX Design Certificate Program, this project allowed
+      me to apply what I learned throughout the course. For instance, user
+      journey mapping, personas, iterative design, usability studies, and more.
+      As my first user-centred piece, it helped me empathize with users to
+      create a cohesive experience. <br /><br />Further directions with this
+      design may include conducting another usability study to identify any new
+      pain points. Additionally, user surveys may also help identify areas of
+      dissatisfaction and areas that need improvements.
     </p>
     <div class="flex gap-6 flex-wrap text-zinc-100 w-full justify-center">
       <a
-        href="https://xd.adobe.com/view/99a46e1a-a8af-487b-a735-d5923365ea9f-ccf7/?fullscreen"
-        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
+        href="https://www.figma.com/proto/93jQf7rWab3raYiQEC4ODT/Google-UX?page-id=203%3A102&node-id=203%3A103&viewport=-3178%2C11%2C0.86&scaling=scale-down&starting-point-node-id=203%3A103"
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(194,46%,35%)] hover:bg-[hsl(194,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
+        target="_blank"
       >
-        <img src="../src/assets/svg/xd.svg" alt="" class="h-7 w-7" />
+        <img src="../src/assets/svg/figma.svg" alt="" class="h-7 w-7" />
         <div>Prototype</div>
       </a>
       <a
-        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
-        href="../src/assets/pdf/oasis-slide-deck.pdf"
+        class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(194,46%,35%)] hover:bg-[hsl(194,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
+        href="../src/assets/pdf/munch-slide-deck.pdf"
+        target="_blank"
       >
         <img src="../src/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
         <div class="data-[type='circleblur']:hidden">Slide Deck</div>

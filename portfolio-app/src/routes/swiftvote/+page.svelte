@@ -21,7 +21,7 @@
   <section
     class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-green
      md:h-[50vh]"
-    style="background-image: url('../src/assets/img/swiftvote-hd.png')"
+    style="background-image: url('../src/assets/img/swiftvote/swiftvote-hd.png')"
   >
     <img
       src={'../src/assets/svg/swiftvote-logo.svg'}
@@ -194,7 +194,7 @@
       information.
     </p>
     <ImgContainer
-      path="../src/assets/img/sv-crazy-eights.webp"
+      path="../src/assets/img/swiftvote/sv-crazy-eights.webp"
       alt="Crazy eight sketches of solutions to user pain points"
       classList="dark:brightness-[0.8]"
     />
@@ -215,11 +215,11 @@
     </p>
 
     <a
-      href="../src/assets/img/sv-digital-wireframe.webp"
+      href="../src/assets/img/swiftvote/sv-digital-wireframe.webp"
       class="hover:-translate-y-1 hover:shadow-lg transition ease-in-out rounded-lg overflow-hidden"
     >
       <img
-        src="../src/assets/img/sv-digital-wireframe.webp"
+        src="../src/assets/img/swiftvote/sv-digital-wireframe.webp"
         alt="A digital wireframe for the swiftvote app"
         class="w-full max-w-[800px] self-center bg-background-600"
         loading="lazy"
@@ -231,7 +231,7 @@
       testing via usability studies.
     </p>
     <ImgContainer
-      path="../src/assets/img/sv-lofi-proto.webp"
+      path="../src/assets/img/swiftvote/sv-lofi-proto.webp"
       alt="Low fidelity prototype of the app"
       classList=""
     />
@@ -320,12 +320,12 @@
       typography, and colour to make it a more polished iteration.
     </p>
     <ImgContainer
-      path="../src/assets/img/sv-before-after.webp"
+      path="../src/assets/img/swiftvote/sv-before-after.webp"
       alt="A comparison between the digital wireframe and the mockup of the first registration screen"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/sv-mockups.webp"
+      path="../src/assets/img/swiftvote/sv-mockups.webp"
       alt="Mockups of the different screens (home, confirmation, appointment, settings, and electoral participant)"
       classList=""
     />
@@ -346,7 +346,7 @@
       were prompted by the usability study.
     </p>
     <ImgContainer
-      path="../src/assets/img/sv-hifi-proto.webp"
+      path="../src/assets/img/swiftvote/sv-hifi-proto.webp"
       alt="High-fidelity prototype of the swiftvote app"
       classList=""
     />
@@ -437,7 +437,7 @@
       the experiences.
     </p>
     <ImgContainer
-      path="../src/assets/img/sv-sitemap.webp"
+      path="../src/assets/img/swiftvote/sv-sitemap.webp"
       alt="Sitemap of the swiftvote website experience"
       classList=""
     />
@@ -450,7 +450,7 @@
       bar that shows relevant information depending on the screen.
     </p>
     <ImgContainer
-      path="../src/assets/img/sv-responsive-designs.webp"
+      path="../src/assets/img/swiftvote/sv-responsive-designs.webp"
       alt="Mockups of the home screen on different formats (Left = mobile, center = tablet, right = desktop)"
       classList=""
     />
@@ -493,6 +493,7 @@
       <a
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[#308264] hover:bg-[#2f614f] hover:shadow-lg transition ease-ios-smooth duration-500"
         href="../src/assets/pdf/swiftvote-slide-deck.pdf"
+        target="_blank"
       >
         <img src="../src/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
         <div class="data-[type='circleblur']:hidden">Slide Deck</div>

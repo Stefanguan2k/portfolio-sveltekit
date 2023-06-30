@@ -1,36 +1,55 @@
 <script>
-  let homeIcon;
-  let projIcon;
-  let aboutIcon;
-  let contactIcon;
+  import { page } from '$app/stores';
+  import { navigating } from '$app/stores';
+
+  let home;
+  let about;
+  let contact;
+  let project;
 
   const resetActive = () => {
-    homeIcon.setAttribute('data-active', false);
-    projIcon.setAttribute('data-active', false);
-    aboutIcon.setAttribute('data-active', false);
-    contactIcon.setAttribute('data-active', false);
+    home = 'false';
+    project = 'false';
+    about = 'false';
+    contact = 'false';
   };
 
+  // Determine active element
   export function updateActive(i) {
     switch (i) {
       case 0:
         resetActive();
-        homeIcon.setAttribute('data-active', true);
+        home = 'true';
         break;
       case 1:
         resetActive();
-        projIcon.setAttribute('data-active', true);
+        project = 'true';
         break;
 
       case 2:
         resetActive();
-        aboutIcon.setAttribute('data-active', true);
+        about = 'true';
         break;
 
       case 3:
         resetActive();
-        contactIcon.setAttribute('data-active', true);
+        contact = 'true';
         break;
+    }
+  }
+
+  // Determine if current page is within projects
+  if ($page.url.pathname === '/') {
+    project = 'false';
+  } else {
+    project = 'true';
+  }
+
+  $: if ($navigating) {
+    if ($navigating.to.route.id === '/') {
+      project = 'false';
+    } else {
+      project = 'true';
     }
   }
 </script>
@@ -59,11 +78,10 @@
       <li>
         <a
           href="/#home"
-          class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
+          class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300 fill-zinc-700 dark:fill-zinc-300
             before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
-            md:data-[active='true']:before:block data-[active='true']:fill-main-100"
-          data-active="false"
-          bind:this={homeIcon}
+            md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:text-main-100"
+          data-active={home}
           ><svg
             class="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +91,7 @@
               d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
             /></svg
           >
-          <span class="hidden md:data-[active='true']:block">Home</span></a
-        >
+        </a>
       </li>
       <!-- Projects Icon -->
       <li>
@@ -83,8 +100,7 @@
           class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
             before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
             md:data-[active='true']:before:block data-[active='true']:fill-main-100"
-          data-active="false"
-          bind:this={projIcon}
+          data-active={project}
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             height="48"
@@ -94,7 +110,11 @@
             ><path
               d="M347-427h234v-67H347v67Zm0-97h420v-67H347v67Zm0-97h420v-67H347v67Zm-62 426q-36.413 0-63.706-27.612Q194-250.225 194-286v-542q0-36.188 27.294-64.094Q248.587-920 285-920h542q36.188 0 63.594 27.906T918-828v542q0 35.775-27.406 63.388Q863.188-195 827-195H285ZM134-44q-36.825 0-63.912-27.406Q43-98.812 43-135v-633h91v633h633v91H134Z"
             /></svg
-          ></a
+          >
+          <div
+            class="absolute data-[active='false']:hidden md:hidden h-2 w-2 -bottom-3 bg-main-100 rounded-full left-[50%] translate-x-[-50%]"
+            data-active={project}
+          /></a
         >
       </li>
       <!-- About Me Icon -->
@@ -104,8 +124,7 @@
           class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
             before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
             md:data-[active='true']:before:block data-[active='true']:fill-main-100"
-          data-active="false"
-          bind:this={aboutIcon}
+          data-active={about}
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -124,8 +143,7 @@
           class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
             before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
             md:data-[active='true']:before:block data-[active='true']:fill-main-100"
-          data-active="false"
-          bind:this={contactIcon}
+          data-active={contact}
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
