@@ -6,6 +6,7 @@
   let about;
   let contact;
   let project;
+  let projectMobileIndicator;
 
   const resetActive = () => {
     home = 'false';
@@ -41,15 +42,19 @@
   // Determine if current page is within projects
   if ($page.url.pathname === '/') {
     project = 'false';
+    projectMobileIndicator = 'false';
   } else {
     project = 'true';
+    projectMobileIndicator = 'true';
   }
 
   $: if ($navigating) {
     if ($navigating.to.route.id === '/') {
       project = 'false';
+      projectMobileIndicator = 'false';
     } else {
       project = 'true';
+      projectMobileIndicator = 'true';
     }
   }
 </script>
@@ -78,9 +83,9 @@
       <li>
         <a
           href="/#home"
-          class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300 fill-zinc-700 dark:fill-zinc-300
-            before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
-            md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:text-main-100"
+          class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
+          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+          md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full"
           data-active={home}
           ><svg
             class="h-6 w-6"
@@ -98,9 +103,11 @@
         <a
           href="/#projects"
           class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
-            before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
-            md:data-[active='true']:before:block data-[active='true']:fill-main-100"
+            before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+            md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full
+            data-[nested='true']:before:rounded-none data-[nested='true']:before:rounded-tr-full data-[nested='true']:before:rounded-br-full"
           data-active={project}
+          data-nested={projectMobileIndicator}
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             height="48"
@@ -112,8 +119,8 @@
             /></svg
           >
           <div
-            class="absolute data-[active='false']:hidden md:hidden h-2 w-2 -bottom-3 bg-main-100 rounded-full left-[50%] translate-x-[-50%]"
-            data-active={project}
+            class="absolute data-[active='false']:hidden md:hidden h-1 w-[200%] -bottom-full bg-main-100 rounded-tr-full rounded-tl-full left-[50%] translate-x-[-50%]"
+            data-active={projectMobileIndicator}
           /></a
         >
       </li>
@@ -122,8 +129,8 @@
         <a
           href="/#aboutme"
           class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
-            before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
-            md:data-[active='true']:before:block data-[active='true']:fill-main-100"
+          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+          md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full"
           data-active={about}
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -141,8 +148,8 @@
         <a
           href="/#contact"
           class="relative flex gap-12 fill-zinc-700 dark:fill-zinc-300
-            before:hidden before:w-1 before:h-full before:bg-main-100 before:absolute before:left-[-100%] before:top-0 before:rounded-full
-            md:data-[active='true']:before:block data-[active='true']:fill-main-100"
+          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+          md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full"
           data-active={contact}
           ><svg
             xmlns="http://www.w3.org/2000/svg"

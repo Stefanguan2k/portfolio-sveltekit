@@ -12,7 +12,7 @@
   let isInView;
 
   const options = {
-    threshold: 0.2,
+    threshold: 0.3,
     rootMargin: '0px',
   };
 
@@ -399,8 +399,10 @@
             > apply.
           </div>
           <button
-            class="bg-main-100 rounded-md p-4 text-zinc-100 hover:shadow-md hover:bg-main-100/70 transform ease-ios-smooth duration-500
-              data-[state='loading']:"
+            class="bg-main-100 rounded-md p-4 text-zinc-100 transform ease-ios-smooth duration-500
+              data-[state='default']:hover:shadow-md data-[state='default']:hover:bg-main-100/70
+              data-[state='loading']:bg-main-100/50
+              data-[state='error']:bg-red-500 dark:data-[state='error']:bg-red-900/80"
             data-state="default"
           >
             Submit
