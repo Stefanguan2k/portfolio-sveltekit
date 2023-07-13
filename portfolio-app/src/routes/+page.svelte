@@ -3,6 +3,7 @@
   import NavIndex from '../lib/nav.svelte';
   import ProjCard from '../lib/project-card.svelte';
   import SocialOverlay from '../lib/social-overlay.svelte';
+  import emailjs from '@emailjs/browser';
 
   let toggle;
   let nameInput;
@@ -23,6 +24,16 @@
     changeIndx(indx);
   }
 
+  function sendEmail(e) {
+    emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'PUBLIC_KEY').then(
+      (result) => {
+        console.log('SUCCESS!', result.text);
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      }
+    );
+  }
 </script>
 
 <svelte:head>
@@ -167,7 +178,7 @@
           class="rounded-md h-56 w-56"
         />
       </div>
-      <div class="flex flex-col gap-6 text-center md:text-justify">
+      <div class="flex flex-col gap-6 text-center md:text-start">
         <p>
           I am a UX Designer based in Surrey, BC. My personal mission is to
           craft brilliant experiences that positively impacts the user.
@@ -252,11 +263,11 @@
         </div>
       </div>
       <div class="w-full">
-        <form class="flex flex-col gap-2">
+        <form class="flex flex-col gap-2" on:submit|preventDefault={sendEmail}>
           <div class="relative">
             <input
               type="text"
-              name="name"
+              name="user_name"
               id="name"
               bind:this={nameInput}
               class="block focus:shadow-md bg-transparent rounded-md pl-3 pr-9 pt-4 pb-2 peer w-full border-2 border-background-400 dark:border-background-500 focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"
@@ -288,7 +299,7 @@
           <div class="relative">
             <input
               type="email"
-              name="email"
+              name="user_email"
               id="email"
               bind:this={emailInput}
               class="block focus:shadow-md bg-transparent rounded-md pl-3 pr-9 pt-4 pb-2 peer w-full border-2 border-background-400 dark:border-background-500 focus:outline-none focus:border-main-100 focus:border-1 focus:ring-0 focus:shadow-md transition ease-ios-smooth duration-500"

@@ -33,8 +33,8 @@
       style:background={theme}
     >
       <div class="col-span-2">
-        <p id="name" class="text-2xl ml-8">{name}</p>
-        <span id="role" class="ml-8">{role}</span>
+        <p id="name" class="text-xl ml-8">{name}</p>
+        <p id="role" class="text-md ml-8">{role}</p>
       </div>
       <div class="self-center justify-self-end mr-8 flex gap-4">
         <img
