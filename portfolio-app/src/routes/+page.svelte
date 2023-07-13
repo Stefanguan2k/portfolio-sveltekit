@@ -10,6 +10,7 @@
   let subjectInput;
   let messageInput;
   let isInView;
+  let contactState = 'submit';
 
   const options = {
     threshold: 0.3,
@@ -22,14 +23,6 @@
     changeIndx(indx);
   }
 
-  // let projectSection;
-  // const expandCard = () => {
-  //   if (projectSection.getAttribute('data-expanded') === 'false') {
-  //     projectSection.setAttribute('data-expanded', true);
-  //   } else {
-  //     projectSection.setAttribute('data-expanded', false);
-  //   }
-  // };
 </script>
 
 <svelte:head>
@@ -399,17 +392,15 @@
             > apply.
           </div>
           <button
-            class="bg-main-100 rounded-md p-4 text-zinc-100 transform ease-ios-smooth duration-500
-              data-[state='default']:hover:shadow-md data-[state='default']:hover:bg-main-100/70
-              data-[state='loading']:bg-main-100/50
-              data-[state='error']:bg-red-500 dark:data-[state='error']:bg-red-900/80"
-            data-state="default"
+            class="bg-main-100 rounded-md p-4 text-zinc-100 transform ease-ios-smooth duration-500 capitalize
+              data-[state='submit']:hover:shadow-md data-[state='submit']:hover:bg-main-100/70
+              data-[state='submitting']:bg-main-100/50 data-[state='submitting']:pointer-events-none
+              data-[state='error']:bg-red-500 dark:data-[state='error']:bg-red-900/80 data-[state='error']:pointer-events-none"
+            data-state={contactState}
           >
-            Submit
+            {contactState}
           </button>
         </form>
-
-        <!-- Recaptcha Widget -->
       </div>
     </div>
   </section>
