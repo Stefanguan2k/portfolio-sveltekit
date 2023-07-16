@@ -4,6 +4,7 @@
   import ProjCard from '../lib/project-card.svelte';
   import SocialOverlay from '../lib/social-overlay.svelte';
   import emailjs from '@emailjs/browser';
+  import { Recaptcha, recaptcha, observer } from 'svelte-recaptcha-v2';
 
   let toggle;
   let nameInput;
@@ -12,6 +13,8 @@
   let messageInput;
   let isInView;
   let contactState = 'submit';
+  let form;
+  const googleRecaptchaSiteKey = '6LfxSiQnAAAAAO7K89EfSxeDb_nJ_7KforWNso3P';
 
   const options = {
     threshold: 0.3,
@@ -24,16 +27,69 @@
     changeIndx(indx);
   }
 
-  function sendEmail(e) {
-    emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'PUBLIC_KEY').then(
-      (result) => {
-        console.log('SUCCESS!', result.text);
-      },
-      (error) => {
-        console.log('FAILED...', error.text);
-      }
-    );
+  // function sendEmail(e) {
+  //   emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'PUBLIC_KEY').then(
+  //     (result) => {
+  //       console.log('SUCCESS!', result.text);
+  //     },
+  //     (error) => {
+  //       console.log('FAILED...', error.text);
+  //     }
+  //   );
+  // }
+
+  const onCaptchaSuccess = (event) => {
+    console.log('success');
+    postForm(token);
+  };
+
+  function postForm(token) {
+    console.log(token);
+    // modifyBtn('submitting');
+
+    var params = {
+      user_name: form.elements['name'].value,
+      user_email: form.elements['email'].value,
+      subject: form.elements['subject'].value,
+      message: form.elements['message'].value,
+      'g-recaptcha-response': token,
+    };
+
+    emailjs
+      .send('service_q42ebsg', 'template_1fdyrau', params, '5jl6JNXBemLoWgQGo')
+      .then(
+        function () {
+          // modifyBtn('success');
+          console.log('success');
+        },
+        function (error) {
+          // setTimeout(() => {
+          //   modifyBtn('fail');
+          // }, 2000);
+
+          // // Refresh Button after timeout
+          // setTimeout(resetBtn, 5000);
+          console.log('error', error);
+        }
+      );
   }
+
+  const submitHandler = async () => {
+    console.log('launching recaptcha');
+    recaptcha.execute();
+
+    console.log('pending for google response');
+    const event = await Promise.resolve(observer);
+
+    const recaptchaToken = event.detail?.token ? event.detail.token : false;
+
+    if (!recaptchaToken) {
+      console.log('recaptcha is NOT OK');
+      return false;
+    }
+
+    console.log('token retrieved', recaptchaToken);
+  };
 </script>
 
 <svelte:head>
@@ -263,7 +319,11 @@
         </div>
       </div>
       <div class="w-full">
-        <form class="flex flex-col gap-2" on:submit|preventDefault={sendEmail}>
+        <form
+          class="flex flex-col gap-2"
+          on:submit|preventDefault
+          bind:this={form}
+        >
           <div class="relative">
             <input
               type="text"
@@ -401,6 +461,14 @@
             <a href="https://policies.google.com/terms" class="underline"
               >Terms of Service</a
             > apply.
+          </div>
+          <div class="absolute opacity-0">
+            <Recaptcha
+              sitekey={googleRecaptchaSiteKey}
+              badge={'top'}
+              size={'invisible'}
+              on:success={onCaptchaSuccess}
+            />
           </div>
           <button
             class="bg-main-100 rounded-md p-4 text-zinc-100 transform ease-ios-smooth duration-500 capitalize
