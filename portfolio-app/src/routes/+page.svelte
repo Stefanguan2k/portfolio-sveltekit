@@ -15,7 +15,7 @@
   let form;
 
   const options = {
-    threshold: 0.3,
+    threshold: 0.4,
     rootMargin: '0px',
   };
 
@@ -36,14 +36,8 @@
   //   );
   // }
 
-  const onCaptchaSuccess = (event) => {
-    console.log('success');
-    postForm(token);
-  };
-
-  function postForm(token) {
-    console.log(token);
-    // modifyBtn('submitting');
+  function postForm() {
+    contactState = 'submitting';
 
     var params = {
       user_name: form.elements['name'].value,
@@ -56,21 +50,25 @@
       .send('service_q42ebsg', 'template_1fdyrau', params, '5jl6JNXBemLoWgQGo')
       .then(
         function () {
-          // modifyBtn('success');
+          contactState = 'success';
+          setTimeout(() => {
+            contactState = 'submit';
+          }, 5000);
           console.log('success');
         },
         function (error) {
-          // setTimeout(() => {
-          //   modifyBtn('fail');
-          // }, 2000);
+          setTimeout(() => {
+            contactState = 'error';
+          }, 2000);
 
           // // Refresh Button after timeout
-          // setTimeout(resetBtn, 5000);
+          setTimeout(() => {
+            contactState = 'submit';
+          }, 5000);
           console.log('error', error);
         }
       );
   }
-
 </script>
 
 <svelte:head>
@@ -295,6 +293,7 @@
         <form
           class="flex flex-col gap-2"
           on:submit|preventDefault
+          on:submit={postForm}
           bind:this={form}
         >
           <div class="relative">
@@ -430,7 +429,8 @@
             class="bg-main-100 rounded-md p-4 text-zinc-100 transform ease-ios-smooth duration-500 capitalize
               data-[state='submit']:hover:shadow-md data-[state='submit']:hover:bg-main-100/70
               data-[state='submitting']:bg-main-100/50 data-[state='submitting']:pointer-events-none
-              data-[state='error']:bg-red-500 dark:data-[state='error']:bg-red-900/80 data-[state='error']:pointer-events-none"
+              data-[state='error']:bg-red-500 dark:data-[state='error']:bg-red-900/80 data-[state='error']:pointer-events-none
+              data-[state='success']:bg-green-600 dark:data-[state='success']:bg-green-700 data-[state='success']:pointer-events-none"
             data-state={contactState}
           >
             {contactState}
