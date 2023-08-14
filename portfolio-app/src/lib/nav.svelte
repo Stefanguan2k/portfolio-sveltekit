@@ -64,13 +64,13 @@
     md:left-0 md:top-[50%] md:translate-y-[-50%] md:translate-x-0 md:h-[95%] md:w-max md:rounded-bl-none md:rounded-tl-none md:rounded-xl"
 >
   <div
-    class="relative flex flex-row z-50 p-6 h-full justify-evenly md:flex-col md:justify-between md:overflow-y-auto md:px-4"
+    class="relative flex flex-row z-50 p-6 h-full justify-evenly md:flex-col md:justify-start md:overflow-y-auto md:w-[72px] md:p-0"
   >
     <ul
-      class="flex justify-between w-full px-6 md:p-0 md:flex-col md:gap-[clamp(1.5rem,7vh,7vh)] md:px-2"
+      class="flex justify-between px-4 w-full md:p-0 md:pt-8 md:flex-col md:items-center md:gap-[clamp(1.5rem,7vh,7vh)]"
     >
       <!-- SG Logo -->
-      <li class="hidden md:block">
+      <li class="hidden md:block w-max">
         <a href="/"
           ><img
             src="../src/assets/svg/sg.svg"
@@ -80,11 +80,11 @@
         >
       </li>
       <!-- Home Icon -->
-      <li>
+      <li class="md:w-full">
         <a
           href="/#home"
-          class="relative fill-zinc-700 dark:fill-zinc-300
-          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+          class="relative fill-zinc-700 dark:fill-zinc-300 md:w-full flex justify-center
+          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-0 before:top-[50%] before:translate-y-[-50%]
           md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full"
           data-active={home}
           ><svg
@@ -99,11 +99,11 @@
         </a>
       </li>
       <!-- Projects Icon -->
-      <li>
+      <li class="md:w-full">
         <a
           href="/#projects"
-          class="relative fill-zinc-700 dark:fill-zinc-300
-            before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+          class="relative fill-zinc-700 dark:fill-zinc-300 md:w-full flex justify-center
+            before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-0 before:top-[50%] before:translate-y-[-50%]
             md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full
             data-[nested='true']:before:rounded-none data-[nested='true']:before:rounded-tr-full data-[nested='true']:before:rounded-br-full"
           data-active={project}
@@ -125,11 +125,11 @@
         </a>
       </li>
       <!-- About Me Icon -->
-      <li>
+      <li class="md:w-full">
         <a
           href="/#aboutme"
-          class="relative fill-zinc-700 dark:fill-zinc-300
-          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+          class="relative fill-zinc-700 dark:fill-zinc-300 md:w-full flex justify-center
+          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-0 before:top-[50%] before:translate-y-[-50%]
           md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full"
           data-active={about}
           ><svg
@@ -144,11 +144,11 @@
         >
       </li>
       <!-- Contact Icon -->
-      <li>
+      <li class="md:w-full">
         <a
           href="/#contact"
-          class="relative fill-zinc-700 dark:fill-zinc-300
-          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-[-100%] before:top-[50%] before:translate-y-[-50%]
+          class="relative fill-zinc-700 dark:fill-zinc-300 md:w-full flex justify-center
+          before:hidden before:w-1 before:h-[150%] before:bg-main-100 before:absolute before:left-0 before:top-[50%] before:translate-y-[-50%]
           md:data-[active='true']:before:block data-[active='true']:fill-main-100 data-[active='true']:before:rounded-full"
           data-active={contact}
           ><svg

@@ -4,7 +4,6 @@
   import ProjCard from '../lib/project-card.svelte';
   import SocialOverlay from '../lib/social-overlay.svelte';
   import emailjs from '@emailjs/browser';
-  import { Recaptcha, recaptcha, observer } from 'svelte-recaptcha-v2';
 
   let toggle;
   let nameInput;
@@ -14,7 +13,6 @@
   let isInView;
   let contactState = 'submit';
   let form;
-  const googleRecaptchaSiteKey = '6LfxSiQnAAAAAO7K89EfSxeDb_nJ_7KforWNso3P';
 
   const options = {
     threshold: 0.3,
@@ -52,7 +50,6 @@
       user_email: form.elements['email'].value,
       subject: form.elements['subject'].value,
       message: form.elements['message'].value,
-      'g-recaptcha-response': token,
     };
 
     emailjs
@@ -74,22 +71,6 @@
       );
   }
 
-  const submitHandler = async () => {
-    console.log('launching recaptcha');
-    recaptcha.execute();
-
-    console.log('pending for google response');
-    const event = await Promise.resolve(observer);
-
-    const recaptchaToken = event.detail?.token ? event.detail.token : false;
-
-    if (!recaptchaToken) {
-      console.log('recaptcha is NOT OK');
-      return false;
-    }
-
-    console.log('token retrieved', recaptchaToken);
-  };
 </script>
 
 <svelte:head>
@@ -252,14 +233,6 @@
             class="underline">sveltekit</a
           > (what this website runs on!). I am always looking for ways to improve
           myself, whether through going to the gym or continuously studying.
-        </p>
-        <p>
-          I recently signed up for the Daily UI 100 day design challenge! I
-          would love for you to check my progress <a
-            href="/100day"
-            class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700 dark:from-purple-400 dark:to-indigo-400"
-            >here</a
-          >.
         </p>
       </div>
     </div>
@@ -452,24 +425,7 @@
               >
             </button>
           </div>
-          <div class="text-xs my-4">
-            This site is protected by reCAPTCHA and the Google
-            <a href="https://policies.google.com/privacy" class="underline"
-              >Privacy Policy</a
-            >
-            and
-            <a href="https://policies.google.com/terms" class="underline"
-              >Terms of Service</a
-            > apply.
-          </div>
-          <div class="absolute opacity-0">
-            <Recaptcha
-              sitekey={googleRecaptchaSiteKey}
-              badge={'top'}
-              size={'invisible'}
-              on:success={onCaptchaSuccess}
-            />
-          </div>
+
           <button
             class="bg-main-100 rounded-md p-4 text-zinc-100 transform ease-ios-smooth duration-500 capitalize
               data-[state='submit']:hover:shadow-md data-[state='submit']:hover:bg-main-100/70
