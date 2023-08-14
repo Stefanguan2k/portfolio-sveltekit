@@ -12,6 +12,9 @@ const config = {
       precompress: false,
       strict: true,
     }),
+    paths: {
+      base: main ? '' : process.env.BASE_PATH,
+    }
   },
   preprocess: vitePreprocess(),
 };
