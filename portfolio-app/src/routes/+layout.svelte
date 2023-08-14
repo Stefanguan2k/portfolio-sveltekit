@@ -5,10 +5,6 @@
   import '@fontsource/poppins';
 </script>
 
-<svelte:head>
-  <link rel="icon" type="image/svg" href="../src/assets/SG.ico" />
-</svelte:head>
-
 <Navbar />
 <body class='bg-background-300 dark:bg-background-900'>
   <slot />

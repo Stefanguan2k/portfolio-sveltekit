@@ -21,17 +21,17 @@
   <section
     class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-purple
     md:h-[50vh]"
-    style="background-image: url('../src/assets/img/index/index-yopo.png')"
+    style="background-image: url('/assets/img/index/index-yopo.png')"
   >
     <img
-      src="../src/assets/img/yopo/yopo-logo.webp"
+      src="/assets/img/yopo/yopo-logo.webp"
       alt=""
       class="w-max h-24 z-40 md:self-start md:ml-6 shadow-xl"
     />
 
     <div class="absolute bottom-0 right-0 mb-6 mr-6 flex gap-4">
       <Button
-        icon="../src/assets/svg/link-out.svg"
+        icon="/assets/svg/link-out.svg"
         text="Yopo Sweet Mandarin Website"
         theme="rgba(50,50,50,0.5)"
         type="circleblur"
@@ -293,17 +293,17 @@
       mobile users first, then scaling upwards for desktop.
     </p>
     <ImgContainer
-      path="../src/assets/img/yopo/yopo-sitemap.webp"
+      path="/assets/img/yopo/yopo-sitemap.webp"
       alt="Sitemap of the yopo website redesign"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/yopo/yopo-digital-wireframe-mobile.webp"
+      path="/assets/img/yopo/yopo-digital-wireframe-mobile.webp"
       alt="Mobile digital wireframe of the yopo redesign"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/yopo/yopo-digital-wireframe.webp"
+      path="/assets/img/yopo/yopo-digital-wireframe.webp"
       alt="Desktop digital wireframe of the yopo redesign"
       classList=""
     />
@@ -323,11 +323,11 @@
       feedback, I created mockups for both mobile and desktop.
     </p>
     <ImgContainer
-      path="../src/assets/img/yopo/yopo-hifi-mobile.webp"
+      path="/assets/img/yopo/yopo-hifi-mobile.webp"
       alt="Mobile high-fidelity digital wireframe of the yopo redesign"
       classList=""
     /><ImgContainer
-      path="../src/assets/img/yopo/yopo-hifi-desktop.webp"
+      path="/assets/img/yopo/yopo-hifi-desktop.webp"
       alt="Desktop high-fidelity digital wireframe of the yopo redesign"
       classList=""
     />
@@ -356,7 +356,7 @@
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(36,46%,35%)] hover:bg-[hsl(36,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
         target="_blank"
       >
-        <img src="../src/assets/svg/link-out.svg" alt="" class="h-5 w-5" />
+        <img src="/assets/svg/link-out.svg" alt="" class="h-5 w-5" />
         <div>Live Website</div>
       </a>
     </div>

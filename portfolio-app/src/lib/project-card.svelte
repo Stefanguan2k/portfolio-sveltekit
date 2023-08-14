@@ -3,9 +3,9 @@
   let iconLink;
 
   const icons = {
-    figma: '../src/assets/svg/figma.svg',
-    xd: '../src/assets/svg/xd.svg',
-    code: '../src/assets/svg/code.svg',
+    figma: '/assets/svg/figma.svg',
+    xd: '/assets/svg/xd.svg',
+    code: '/assets/svg/code.svg',
   };
 
   if (n === '1') {
@@ -38,7 +38,7 @@
       </div>
       <div class="self-center justify-self-end mr-8 flex gap-4">
         <img
-          src="../src/assets/svg/code.svg"
+          src="/assets/svg/code.svg"
           alt=""
           class="h-5 w-5 hidden data-[show='2']:block"
           data-show={n}

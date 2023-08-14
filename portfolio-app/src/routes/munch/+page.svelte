@@ -1,13 +1,13 @@
 <script>
   import Button from '/src/lib/cta-btn.svelte';
   import ImgContainer from '/src/lib/images.svelte';
-  let mockupPath = '../src/assets/img/munch/munch-mockup-light.webp';
+  let mockupPath = '/assets/img/munch/munch-mockup-light.webp';
 
   const toggleMockup = () => {
-    if (mockupPath === '../src/assets/img/munch/munch-mockup-light.webp') {
-      mockupPath = '../src/assets/img/munch/munch-mockup-dark.webp';
+    if (mockupPath === '/assets/img/munch/munch-mockup-light.webp') {
+      mockupPath = '/assets/img/munch/munch-mockup-dark.webp';
     } else {
-      mockupPath = '../src/assets/img/munch/munch-mockup-light.webp';
+      mockupPath = '/assets/img/munch/munch-mockup-light.webp';
     }
   };
 </script>
@@ -20,7 +20,7 @@
   <link
     rel="preload"
     as="image"
-    href="../src/assets/img/munch/munch-mockup-dark.webp"
+    href="/assets/img/munch/munch-mockup-dark.webp"
   />
 </svelte:head>
 
@@ -31,7 +31,7 @@
   <section
     class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-lightblue
     md:h-[50vh]"
-    style="background-image: url('../src/assets/img/index/index-munch.png')"
+    style="background-image: url('/assets/img/index/index-munch.png')"
   >
     <svg
       width="181"
@@ -48,18 +48,18 @@
 
     <div class="absolute bottom-0 right-0 mb-6 mr-6 flex gap-4">
       <Button
-        icon="../src/assets/svg/figma.svg"
+        icon="/assets/svg/figma.svg"
         text="Figma Prototype"
         theme="rgba(50,50,50,0.5)"
         type="circleblur"
         location="https://www.figma.com/proto/93jQf7rWab3raYiQEC4ODT/Google-UX?page-id=203%3A102&node-id=203%3A103&viewport=-3178%2C11%2C0.86&scaling=scale-down&starting-point-node-id=203%3A103"
       />
       <Button
-        icon="../src/assets/svg/pdf.svg"
+        icon="/assets/svg/pdf.svg"
         text="Slide Deck"
         theme="rgba(50,50,50,0.5)"
         type="circleblur"
-        location="../src/assets/pdf/munch-slide-deck.pdf"
+        location="/assets/pdf/munch-slide-deck.pdf"
       />
     </div>
   </section>
@@ -158,7 +158,7 @@
         class="grid gap-4 grid-cols-2 grid-rows-2 bg-background-100 dark:bg-background-600 rounded-lg p-4"
       >
         <img
-          src="../src/assets/avatars/alexis.webp"
+          src="/assets/avatars/alexis.webp"
           alt="avatar of Mark"
           class="bg-avatar-100 rounded-md h-32 w-32 self-center"
         />
@@ -179,7 +179,7 @@
         class="grid gap-4 grid-cols-2 grid-rows-2 bg-background-100 dark:bg-background-600 rounded-lg p-4"
       >
         <img
-          src="../src/assets/avatars/billy.webp"
+          src="/assets/avatars/billy.webp"
           alt="avatar of Sam"
           class="bg-avatar-900 rounded-md h-32 w-32 self-center"
         />
@@ -212,7 +212,7 @@
       of a user ordering food.
     </p>
     <ImgContainer
-      path="../src/assets/img/munch/munch-userflow.webp"
+      path="/assets/img/munch/munch-userflow.webp"
       alt="User flow of the food ordering"
       classList=""
     />
@@ -222,7 +222,7 @@
       different variations of the home screen.
     </p>
     <ImgContainer
-      path="../src/assets/img/munch/munch-sketch.webp"
+      path="/assets/img/munch/munch-sketch.webp"
       alt="Various sketches of the home screen"
       classList=""
     />
@@ -232,7 +232,7 @@
       Figma.
     </p>
     <ImgContainer
-      path="../src/assets/img/munch/munch-wireframe.webp"
+      path="/assets/img/munch/munch-wireframe.webp"
       alt="Digital wireframes of the Munch app"
       classList=""
     />
@@ -320,7 +320,7 @@
       allowing for further iterations on the mockups.
     </p>
     <ImgContainer
-      path="../src/assets/img/munch/munch-before-after.webp"
+      path="/assets/img/munch/munch-before-after.webp"
       alt="A comparison between the digital wireframe (home screen and restaurant screen) before and after the usability study"
       classList=""
     />
@@ -407,15 +407,15 @@
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(194,46%,35%)] hover:bg-[hsl(194,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
         target="_blank"
       >
-        <img src="../src/assets/svg/figma.svg" alt="" class="h-7 w-7" />
+        <img src="/assets/svg/figma.svg" alt="" class="h-7 w-7" />
         <div>Prototype</div>
       </a>
       <a
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(194,46%,35%)] hover:bg-[hsl(194,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
-        href="../src/assets/pdf/munch-slide-deck.pdf"
+        href="/assets/pdf/munch-slide-deck.pdf"
         target="_blank"
       >
-        <img src="../src/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
+        <img src="/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
         <div class="data-[type='circleblur']:hidden">Slide Deck</div>
       </a>
     </div>

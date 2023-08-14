@@ -18,7 +18,7 @@
   <section
     class="relative flex flex-col justify-center items-center h-[65vh] mt-4 rounded-2xl bg-cover bg-center shadow-purple
     md:h-[50vh]"
-    style="background-image: url('../src/assets/img/index/index-oasis.png')"
+    style="background-image: url('/assets/img/index/index-oasis.png')"
   >
     <svg
       id="Layer_1"
@@ -157,18 +157,18 @@
 
     <div class="absolute bottom-0 right-0 mb-6 mr-6 flex gap-4">
       <Button
-        icon="../src/assets/svg/xd.svg"
+        icon="/assets/svg/xd.svg"
         text="Adobe XD Prototype"
         theme="rgba(50,50,50,0.5)"
         type="circleblur"
         location="https://xd.adobe.com/view/99a46e1a-a8af-487b-a735-d5923365ea9f-ccf7/?fullscreen"
       />
       <Button
-        icon="../src/assets/svg/pdf.svg"
+        icon="/assets/svg/pdf.svg"
         text="Slide Deck"
         theme="rgba(50,50,50,0.5)"
         type="circleblur"
-        location="../src/assets/pdf/oasis-slide-deck.pdf"
+        location="/assets/pdf/oasis-slide-deck.pdf"
       />
     </div>
   </section>
@@ -341,7 +341,7 @@
         class="grid gap-4 grid-cols-2 grid-rows-2 bg-background-100 dark:bg-background-600 rounded-lg p-4"
       >
         <img
-          src="../src/assets/avatars/david.webp"
+          src="/assets/avatars/david.webp"
           alt="avatar of Mark"
           class="rounded-md h-32 w-32 self-center"
         />
@@ -362,7 +362,7 @@
         class="grid gap-4 grid-cols-2 grid-rows-2 bg-background-100 dark:bg-background-600 rounded-lg p-4"
       >
         <img
-          src="../src/assets/avatars/michelle.webp"
+          src="/assets/avatars/michelle.webp"
           alt="avatar of Sam"
           class="rounded-md h-32 w-32 self-center"
         />
@@ -397,7 +397,7 @@
       it to be crucial when planning out the organization of the website.
     </p>
     <ImgContainer
-      path="../src/assets/img/oasis/oasis-sitemap.webp"
+      path="/assets/img/oasis/oasis-sitemap.webp"
       alt="Sitemap of the Oasis website"
       classList=""
     />
@@ -407,7 +407,7 @@
       how the would look.
     </p>
     <ImgContainer
-      path="../src/assets/img/oasis/oasis-paper-wireframe.webp"
+      path="/assets/img/oasis/oasis-paper-wireframe.webp"
       alt="Paper wireframe of the oasis website"
       classList=""
     />
@@ -418,12 +418,12 @@
       more feedback.
     </p>
     <ImgContainer
-      path="../src/assets/img/oasis/oasis-digital-wireframe.webp"
+      path="/assets/img/oasis/oasis-digital-wireframe.webp"
       alt="Digital wireframe of the oasis website"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/oasis/oasis-digital-wireframe-mobile.webp"
+      path="/assets/img/oasis/oasis-digital-wireframe-mobile.webp"
       alt="Digital wireframe of the mobile oasis website"
       classList=""
     />
@@ -510,12 +510,12 @@
       designs—the mockups.
     </p>
     <ImgContainer
-      path="../src/assets/img/oasis/oasis-before-and-after.webp"
+      path="/assets/img/oasis/oasis-before-and-after.webp"
       alt="A comparison between the digital wireframe and the mockup of the home and booking screens"
       classList=""
     />
     <ImgContainer
-      path="../src/assets/img/oasis/oasis-mockups.png"
+      path="/assets/img/oasis/oasis-mockups.png"
       alt="Mockups of the different screens (home, search, listing, book together, and settings)"
       classList=""
     />
@@ -596,16 +596,16 @@
     <!-- Top bar -->
     <h2 class="text-2xl font-bold self-start md:self-center">Final Design</h2>
     <ImgContainer
-      path="../src/assets/img/oasis/oasis-finalbk.webp"
+      path="/assets/img/oasis/oasis-finalbk.webp"
       alt="Mockups of the final oasis website"
       classList=""
     />
     <a
-      href="../src/assets/img/oasis/oasis-style-guide.webp"
+      href="/assets/img/oasis/oasis-style-guide.webp"
       class="hover:-translate-y-1 hover:shadow-lg transition ease-in-out rounded-lg overflow-hidden"
     >
       <img
-        src="../src/assets/img/oasis/oasis-style-guide.webp"
+        src="/assets/img/oasis/oasis-style-guide.webp"
         alt="Oasis style guide"
         class="w-full max-w-[800px] self-center bg-background-600"
         loading="lazy"
@@ -637,15 +637,15 @@
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
         target="_blank"
       >
-        <img src="../src/assets/svg/xd.svg" alt="" class="h-7 w-7" />
+        <img src="/assets/svg/xd.svg" alt="" class="h-7 w-7" />
         <div>Prototype</div>
       </a>
       <a
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(273,46%,35%)] hover:bg-[hsl(273,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
-        href="../src/assets/pdf/oasis-slide-deck.pdf"
+        href="/assets/pdf/oasis-slide-deck.pdf"
         target="_blank"
       >
-        <img src="../src/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
+        <img src="/assets/svg/pdf.svg" alt="" class="h-7 w-7" />
         <div class="data-[type='circleblur']:hidden">Slide Deck</div>
       </a>
     </div>

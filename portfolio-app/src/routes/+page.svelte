@@ -25,16 +25,6 @@
     changeIndx(indx);
   }
 
-  // function sendEmail(e) {
-  //   emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'PUBLIC_KEY').then(
-  //     (result) => {
-  //       console.log('SUCCESS!', result.text);
-  //     },
-  //     (error) => {
-  //       console.log('FAILED...', error.text);
-  //     }
-  //   );
-  // }
 
   function postForm() {
     contactState = 'submitting';
@@ -150,8 +140,8 @@
         name="SwiftVote"
         role="UX Case Study"
         theme="rgba(0,100,100,0.5)"
-        img="../src/assets/img/index/index-swiftvote.png"
-        path="../swiftvote"
+        img="/assets/img/index/index-swiftvote.png"
+        path="/swiftvote"
         icon="figma"
         n="1"
       />
@@ -160,27 +150,27 @@
         name="Oasis"
         role="UX Case Study"
         theme="rgba(50,0,100,0.5)"
-        img="../src/assets/img/index/index-oasis.png"
+        img="/assets/img/index/index-oasis.png"
         icon="xd"
-        path="../oasis"
+        path="/oasis"
         n="1"
       />
       <ProjCard
         name="Yopo"
         role="Web Design"
         theme="rgba(95,50,0,0.5)"
-        img="../src/assets/img/index/index-yopo.png"
+        img="/assets/img/index/index-yopo.png"
         icon="codefigma"
-        path="../yopo"
+        path="/yopo"
         n="2"
       />
       <ProjCard
         name="Munch"
         role="UX Case Study"
         theme="rgba(0,50,100,0.5)"
-        img="../src/assets/img/index/index-munch.png"
+        img="/assets/img/index/index-munch.png"
         icon="figma"
-        path="../munch"
+        path="/munch"
         n="1"
       />
     </div>
@@ -208,7 +198,7 @@
     >
       <div class="self-center justify-self-center">
         <img
-          src="../src/assets/img/index/profile-img.webp"
+          src="/assets/img/index/profile-img.webp"
           alt="Portait of myself"
           class="rounded-md h-56 w-56"
         />

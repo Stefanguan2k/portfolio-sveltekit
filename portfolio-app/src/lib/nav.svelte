@@ -73,7 +73,7 @@
       <li class="hidden md:block w-max">
         <a href="/"
           ><img
-            src="../src/assets/svg/sg.svg"
+            src="/assets/svg/sg.svg"
             alt="Stefan Guan logo"
             class="h-6 w-6 invert-[0.85] dark:invert-0"
           /></a
