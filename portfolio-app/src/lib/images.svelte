@@ -7,6 +7,7 @@
 
 <a
   href={path}
+  target="_blank"
   class="hover:-translate-y-1 hover:shadow-lg transition ease-in-out rounded-lg overflow-hidden {classList}"
 >
   <img

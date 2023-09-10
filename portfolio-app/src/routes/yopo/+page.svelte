@@ -348,11 +348,10 @@
       website. Through iterative design and data-driven decisions, I was able to
       develop and deploy a static website befitting of the restaurant.<br /><br
       />
-      Thank you for taking the time out of your day to check my case study on Oasis.
     </p>
     <div class="flex gap-6 flex-wrap text-zinc-100 w-full justify-center">
       <a
-        href="https://xd.adobe.com/view/99a46e1a-a8af-487b-a735-d5923365ea9f-ccf7/?fullscreen"
+        href="https://www.sweetmandarin.ca"
         class="px-8 py-4 flex gap-3 justify-center items-center rounded-full bg-[hsl(36,46%,35%)] hover:bg-[hsl(36,35%,28%)] hover:shadow-lg transition ease-ios-smooth duration-500"
         target="_blank"
       >

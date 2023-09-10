@@ -264,7 +264,7 @@
             <div>stefan.guan@outlook.com</div></a
           >
           <a
-            href="mailto:stefan.guan@outlook.com"
+            href="https://www.linkedin.com/in/stefan-guan-a72224228/"
             class="flex gap-2 text-sm items-center fill-zinc-700 dark:fill-zinc-300 w-max"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
