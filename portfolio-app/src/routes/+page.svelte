@@ -25,7 +25,6 @@
     changeIndx(indx);
   }
 
-
   function postForm() {
     contactState = 'submitting';
 
@@ -37,7 +36,7 @@
     };
 
     emailjs
-      .send('service_q42ebsg', 'template_1fdyrau', params, '5jl6JNXBemLoWgQGo')
+      .send('service_vpao24h', 'template_1fdyrau', params, '5jl6JNXBemLoWgQGo')
       .then(
         function () {
           contactState = 'success';
